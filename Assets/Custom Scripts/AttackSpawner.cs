@@ -13,7 +13,7 @@ public class AttackSpawner : MonoBehaviour
         foreach (var spawnLocation in SpawnLocations)
         {
             var attack = Instantiate(attackPrefab, spawnLocation.position, spawnLocation.rotation);
-            attack.transform.SetParent(transform);
+            attack.transform.SetParent(spawnLocation);
         }
         
     }
