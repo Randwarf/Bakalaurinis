@@ -10,11 +10,7 @@ public class AttackSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (var spawnLocation in SpawnLocations)
-        {
-            var attack = Instantiate(attackPrefab, spawnLocation.position, spawnLocation.rotation);
-            attack.transform.SetParent(spawnLocation);
-        }
+        
         
     }
 
@@ -22,5 +18,14 @@ public class AttackSpawner : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnGrab()
+    {
+        foreach (var spawnLocation in SpawnLocations)
+        {
+            var attack = Instantiate(attackPrefab, spawnLocation.position, spawnLocation.rotation);
+            attack.transform.SetParent(spawnLocation);
+        }
     }
 }

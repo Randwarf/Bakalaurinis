@@ -7,6 +7,7 @@ public class UiOrb : MonoBehaviour
 {
     public GameObject ActionOrbPrefab;
     public XRInteractionManager InteractionManager;
+    public GameObject tooltip;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,16 @@ public class UiOrb : MonoBehaviour
             var newItem = Instantiate(ActionOrbPrefab, transform.position, transform.rotation);
             InteractionManager.SelectEnter(interactor, newItem.GetComponent<XRGrabInteractable>());
             Destroy(this.gameObject);
-        }
-        
+        } 
+    }
+
+    public void OnUiOrbHoverEnter()
+    {
+        tooltip.SetActive(true);
+    }
+
+    public void OnUiOrbHoverExit()
+    {
+        tooltip.SetActive(false);
     }
 }
