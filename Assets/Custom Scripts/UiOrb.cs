@@ -13,6 +13,7 @@ public class UiOrb : MonoBehaviour
     void Start()
     {
         InteractionManager = FindObjectOfType<XRInteractionManager>();
+        transform.rotation = Random.rotation;
     }
 
     // Update is called once per frame

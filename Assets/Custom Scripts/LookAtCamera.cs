@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookAtCamera : MonoBehaviour
 {
     private Camera _camera;
+    public bool lockYAxis = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,12 @@ public class LookAtCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(2 * transform.position - _camera.transform.position);
+        var position = 2 * transform.position - _camera.transform.position;
+
+        if (lockYAxis)
+            position.y = 0;
+
+        transform.LookAt(position);
+
     }
 }
