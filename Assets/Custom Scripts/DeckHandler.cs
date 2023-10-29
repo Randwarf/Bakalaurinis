@@ -23,4 +23,5 @@ public class DeckHandler : MonoBehaviour
         Destroy(GetComponent<Rigidbody>());
         transform.SetParent(args.interactorObject.transform);
     }
+
 }

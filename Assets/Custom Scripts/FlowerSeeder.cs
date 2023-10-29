@@ -16,7 +16,7 @@ public class FlowerSeeder : MonoBehaviour
             var flower = Flowers[flowerIndex];
             var position = new Vector3(Random.Range(-1 * radius, radius), 0, Random.Range(-1 * radius, radius));
 
-            var item = Instantiate(flower);
+            var item = Instantiate(flower, transform);
             item.transform.position = position;
         }
     }

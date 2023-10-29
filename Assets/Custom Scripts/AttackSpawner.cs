@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackSpawner : MonoBehaviour
 {
     public Transform[] SpawnLocations;
-    public GameObject attackPrefab;
+    public List<GameObject> attackPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,15 @@ public class AttackSpawner : MonoBehaviour
     {
         foreach (var spawnLocation in SpawnLocations)
         {
-            var attack = Instantiate(attackPrefab, spawnLocation.position, spawnLocation.rotation);
-            attack.transform.SetParent(spawnLocation);
+            Spawn(spawnLocation);
         }
+    }
+
+    public void Spawn(Transform parent)
+    {
+        var attackIndex = Random.Range(0, attackPrefabs.Count);
+        var attack = Instantiate(attackPrefabs[attackIndex], parent.position, parent.rotation);
+        attack.GetComponent<UiOrb>().parent = parent;
+        attack.transform.SetParent(parent);
     }
 }
