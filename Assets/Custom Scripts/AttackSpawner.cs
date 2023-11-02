@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class AttackSpawner : MonoBehaviour
@@ -26,6 +27,9 @@ public class AttackSpawner : MonoBehaviour
         {
             Spawn(spawnLocation);
         }
+
+        var SpotLights = FindObjectOfType<SpotlightHolder>();
+        SpotLights.TurnOff();
     }
 
     public void Spawn(Transform parent)
