@@ -219,9 +219,6 @@ PrefabInstance:
       addedObject: {fileID: 6585260587368097060}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0616e148e14ce0d4b96a1fe6bb5af336, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6501820649730424984}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0616e148e14ce0d4b96a1fe6bb5af336, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 793484457663581224}
   m_SourcePrefab: {fileID: 100100000, guid: 0616e148e14ce0d4b96a1fe6bb5af336, type: 3}
 --- !u!4 &1477959427500864608 stripped
@@ -324,7 +321,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6501820649730424984}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AttackSpawner, Assembly-CSharp
         m_MethodName: OnGrab
         m_Mode: 1
@@ -458,25 +455,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.74674326, y: 0.2542578, z: 0.09999998}
   m_Center: {x: 0.031727865, y: -0.027128855, z: 0.0000000064680226}
---- !u!114 &6501820649730424984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2290384873603509978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a9c37ae32f8224aa1540d818827ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnLocations:
-  - {fileID: 8683545099903617486}
-  - {fileID: 7549223637314963081}
-  - {fileID: 5219137339062636043}
-  attackPrefabs:
-  - {fileID: 9178883535886006104, guid: 5297aa7063b4baf4a8a7669c7173f3a7, type: 3}
-  - {fileID: 9178883535886006104, guid: 99665f871c9b44143bc4397ec5744d93, type: 3}
 --- !u!114 &793484457663581224
 MonoBehaviour:
   m_ObjectHideFlags: 0

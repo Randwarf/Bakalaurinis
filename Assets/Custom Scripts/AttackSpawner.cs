@@ -11,25 +11,16 @@ public class AttackSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        foreach (var spawnLocation in SpawnLocations)
+        {
+            Spawn(spawnLocation);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void OnGrab()
-    {
-        foreach (var spawnLocation in SpawnLocations)
-        {
-            Spawn(spawnLocation);
-        }
-
-        var SpotLights = FindObjectOfType<SpotlightHolder>();
-        SpotLights.TurnOff();
     }
 
     public void Spawn(Transform parent)

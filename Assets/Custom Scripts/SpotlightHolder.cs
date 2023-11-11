@@ -28,6 +28,11 @@ public class SpotlightHolder : MonoBehaviour
             delay += 1000;
         }
 
+        Invoke("LoadBattle", Spotlights.Count + 3 + 1);
+    }
+
+    public void LoadBattle()
+    {
         SceneManager.LoadScene("BattleScene");
     }
 }

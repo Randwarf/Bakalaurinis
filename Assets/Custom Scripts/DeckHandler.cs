@@ -19,6 +19,8 @@ public class DeckHandler : MonoBehaviour
     
     public void OnGrab(SelectEnterEventArgs args)
     {
+        var SpotLights = FindObjectOfType<SpotlightHolder>();
+        SpotLights.TurnOff();
         Destroy(GetComponent<XRGrabInteractable>());
         Destroy(GetComponent<Rigidbody>());
         transform.SetParent(args.interactorObject.transform);
