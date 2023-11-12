@@ -168,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 2725442308985925467}
   - component: {fileID: 5276969507406169143}
   - component: {fileID: 4853540227323483608}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5265,7 +5265,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.55
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-8738310545875862763
 Rigidbody:
@@ -5290,7 +5290,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5497,6 +5497,7 @@ MonoBehaviour:
   ActionOrbPrefab: {fileID: 9178883535886006104, guid: 929d3bf1410140641853881dfdb49935, type: 3}
   InteractionManager: {fileID: 0}
   tooltip: {fileID: 826219875227596357}
+  parent: {fileID: 0}
 --- !u!95 &8374232112685641433
 Animator:
   serializedVersion: 5

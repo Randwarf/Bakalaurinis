@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionController : MonoBehaviour
+public class BulletDamageSource : MonoBehaviour
 {
-    public int damage = 20;
+    public int damage = 40;
     private Collider collider;
 
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<Collider>();
-        Destroy(gameObject, 2f);
     }
 
     // Update is called once per frame
@@ -27,7 +26,10 @@ public class ExplosionController : MonoBehaviour
         if (isMonster)
         {
             monster.OnHit(damage);
-            collider.enabled = false;
+        }
+        if (other.tag.Equals("OrbTarget"))
+        {
+            Destroy(gameObject);
         }
     }
 }

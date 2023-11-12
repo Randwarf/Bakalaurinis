@@ -46,4 +46,10 @@ public class UiOrb : MonoBehaviour
     {
         tooltip.SetActive(false);
     }
+
+    public void OnUiOrbHoverEnter_WithDelay()
+    {
+        tooltip.SetActive(true);
+        tooltip.GetComponent<DelayFade>().FadeAfter(0.25f);
+    }
 }
