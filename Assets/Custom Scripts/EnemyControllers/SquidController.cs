@@ -13,6 +13,7 @@ namespace Assets.Custom_Scripts
         public void Start()
         {
             movementStrategy = new JumpStrategy(GetComponent<Rigidbody>());
+            elementalType = Element.Water;
         }
     }
 }

@@ -26,7 +26,7 @@ public class ExplosionController : MonoBehaviour
         var isMonster = other.gameObject.TryGetComponent<MonsterController>(out monster);
         if (isMonster)
         {
-            monster.OnHit(damage);
+            monster.OnHit(damage, Element.Fire);
             collider.enabled = false;
         }
     }

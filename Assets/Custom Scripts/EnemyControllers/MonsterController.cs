@@ -7,6 +7,7 @@ public abstract class MonsterController : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth = 100;
     protected IEnemyMovementStrategy movementStrategy;
+    protected Element elementalType;
 
     // Update is called once per frame
     void Update()
@@ -14,9 +15,10 @@ public abstract class MonsterController : MonoBehaviour
         movementStrategy.Move();
     }
 
-    public void OnHit(int damage)
+    public void OnHit(int damage, Element attackerElement = Element.Normal)
     {
-        currentHealth -= damage;
+        float effectiveness = ElementalEffectiveness.GetEffectiveness(attackerElement, elementalType);
+        currentHealth -= (int)(damage * effectiveness);
         FindAnyObjectByType<HealthUIController>().UpdateHealth(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
