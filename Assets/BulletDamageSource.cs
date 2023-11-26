@@ -5,7 +5,11 @@ using UnityEngine;
 public class BulletDamageSource : MonoBehaviour
 {
     public int damage = 40;
+    public bool canStun = false;
     private Collider collider;
+
+    [SerializeField]
+    public Element element;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,8 @@ public class BulletDamageSource : MonoBehaviour
         var isMonster = other.gameObject.TryGetComponent<MonsterController>(out monster);
         if (isMonster)
         {
-            monster.OnHit(damage);
+            monster.OnHit(damage, element);
+            if(canStun) monster.Stun();
         }
         if (other.tag.Equals("OrbTarget"))
         {

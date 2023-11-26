@@ -168,7 +168,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: '10
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -177,8 +179,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -273,7 +275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.073, y: 0.281}
+  m_AnchoredPosition: {x: 0.073, y: -0.007}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &3139846669334296564
@@ -317,7 +319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37f403624e536bd4dacdff963842d19f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f3589e025a67c34a977e1fc3c466975, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,13 +341,13 @@ GameObject:
   - component: {fileID: 2725442308985925467}
   - component: {fileID: 5276969507406169143}
   - component: {fileID: 4853540227323483608}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2725442308985925467
 Transform:
   m_ObjectHideFlags: 0
@@ -355,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 8193829463793213582}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.346, z: 0}
   m_LocalScale: {x: 0.009374999, y: 0.009374999, z: 0.009374999}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -497,7 +499,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -551,7 +553,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 1}
+      maxColor: {r: 0, g: 0.29414654, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -939,7 +941,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.002
+      scalar: 0.01
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -993,7 +995,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5171,9 +5173,9 @@ GameObject:
   - component: {fileID: -8738310545875862763}
   - component: {fileID: -2712189982051430665}
   - component: {fileID: 6572869886269118268}
-  - component: {fileID: 8374232112685641433}
+  - component: {fileID: 4156630512377507955}
   m_Layer: 0
-  m_Name: FireOrb_UI
+  m_Name: InkOrb_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5189,7 +5191,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7010899033936764294}
@@ -5224,7 +5226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c206955c4e6cd8c4a879ae263e74ce5d, type: 2}
+  - {fileID: 2100000, guid: 544ee4d1ccbee1f439a79792d56f1956, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5494,11 +5496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a060361420667747a525c9eed8a1d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionOrbPrefab: {fileID: 9178883535886006104, guid: 929d3bf1410140641853881dfdb49935, type: 3}
+  ActionOrbPrefab: {fileID: 9178883535886006104, guid: 97cfa3a398c62084c865ef0da199e679, type: 3}
   InteractionManager: {fileID: 0}
   tooltip: {fileID: 826219875227596357}
   parent: {fileID: 0}
---- !u!95 &8374232112685641433
+--- !u!95 &4156630512377507955
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -5508,7 +5510,7 @@ Animator:
   m_GameObject: {fileID: 9178883535886006104}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9aaab043967d3a4ab14f7735c0fd971, type: 2}
+  m_Controller: {fileID: 9100000, guid: 98ae6a97e3500db4996f9fcf901aa3dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

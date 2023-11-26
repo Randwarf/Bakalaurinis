@@ -8,6 +8,9 @@ public class AttackSpawner : MonoBehaviour
     public Transform[] SpawnLocations;
     public List<GameObject> attackPrefabs;
 
+    [SerializeField]
+    public GameObject RewardAura;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +32,32 @@ public class AttackSpawner : MonoBehaviour
         var attack = Instantiate(attackPrefabs[attackIndex], parent.position, parent.rotation);
         attack.GetComponent<UiOrb>().parent = parent;
         attack.transform.SetParent(parent);
+    }
+
+    internal void AddNewAttack(GameObject gameObject)
+    {
+        attackPrefabs.Add(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        RewardOrb rewardOrb;
+        var isRewardOrb = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
+        if (isRewardOrb)
+        {
+            RewardAura.SetActive(true);
+            rewardOrb.canBeAddedToDeck = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        RewardOrb rewardOrb;
+        var isRewardOrb = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
+        if (isRewardOrb)
+        {
+            RewardAura.SetActive(false);
+            rewardOrb.canBeAddedToDeck = false;
+        }
     }
 }
