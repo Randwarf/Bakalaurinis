@@ -16,6 +16,8 @@ public abstract class MonsterController : MonoBehaviour
     [SerializeField]
     protected List<GameObject> Rewards = new List<GameObject>();
 
+    public GameObject StunVisual;
+
     // Update is called once per frame
     void Update()
     {

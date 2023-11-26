@@ -19,6 +19,7 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
         {
             _monsterController= controller;
             _nextStrategy = nextStragegy;
+            _monsterController.StunVisual.SetActive(true);
         }
 
         public bool DoneMoving()
@@ -32,6 +33,7 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
             if (_elapsedTime> _stunTime)
             {
                 _monsterController.movementStrategy = _nextStrategy;
+                _monsterController.StunVisual.SetActive(false);
             }
         }
 
