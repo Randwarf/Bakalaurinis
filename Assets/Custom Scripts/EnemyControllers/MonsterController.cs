@@ -26,14 +26,18 @@ public abstract class MonsterController : MonoBehaviour
 
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
     {
+
         float effectiveness = ElementalEffectiveness.GetEffectiveness(attackerElement, elementalType);
         currentHealth -= (int)(damage * effectiveness);
-        FindAnyObjectByType<HealthUIController>().UpdateHealth(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
             Die();
         }
+
+        var uiController = FindAnyObjectByType<HealthUIController>();
+        if (uiController) uiController.UpdateHealth(currentHealth, maxHealth);
+        
     }
 
     private void Die()

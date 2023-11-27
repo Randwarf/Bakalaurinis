@@ -8,6 +8,7 @@ public class GeckoController : MonsterController
     void Start()
     {
         movementStrategy = new WanderStrategy(gameObject);
+        elementalType = Element.Normal;
     }
 
 }
