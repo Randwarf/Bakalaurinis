@@ -24,12 +24,12 @@ namespace Assets.Custom_Scripts
         public void Update()
         {
             movementStrategy.Move();
-            timeSinceLastInk += Time.deltaTime;
-            if (timeSinceLastInk > inkDelay )
-            {
-                inkEffect.ActivateInkEffect();
-                timeSinceLastInk = 0f;
-            }
+            //timeSinceLastInk += Time.deltaTime;
+            //if (timeSinceLastInk > inkDelay )
+            //{
+            //    //inkEffect.ActivateInkEffect();
+            //    timeSinceLastInk = 0f;
+            //}
         }
     }
 }

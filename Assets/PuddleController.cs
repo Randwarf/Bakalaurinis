@@ -13,6 +13,8 @@ public class PuddleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
         _collider = GetComponent<Collider>();
     }
 

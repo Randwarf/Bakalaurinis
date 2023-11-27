@@ -7,6 +7,15 @@ public class RewardSpawner : MonoBehaviour
     [SerializeField]
     private List<Transform> SpawnPositions = new List<Transform>();
 
+    private void Start()
+    {
+        //var target = FindAnyObjectByType<Camera>().transform;
+        //Vector3 targetPostition = new Vector3(target.position.x,
+        //                               this.transform.position.y,
+        //                               target.position.z);
+        //this.transform.LookAt(targetPostition);
+    }
+
     public void SpawnRewards(List<GameObject> Rewards)
     {
         foreach (var position in SpawnPositions)

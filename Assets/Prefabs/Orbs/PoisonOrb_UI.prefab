@@ -5496,7 +5496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a060361420667747a525c9eed8a1d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionOrbPrefab: {fileID: 9178883535886006104, guid: 97cfa3a398c62084c865ef0da199e679, type: 3}
+  ActionOrbPrefab: {fileID: 9178883535886006104, guid: 3558b486e6ab8ed438c96d6eb167132e, type: 3}
   InteractionManager: {fileID: 0}
   tooltip: {fileID: 8348017139711229397}
   parent: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AttackSpawner : MonoBehaviour
 {
+    public static List<GameObject> attackPrefabsGlobal;
     public Transform[] SpawnLocations;
     public List<GameObject> attackPrefabs;
 
@@ -14,6 +15,23 @@ public class AttackSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (attackPrefabsGlobal == null)
+        {
+            attackPrefabsGlobal = new List<GameObject>();
+            foreach(var attack in attackPrefabs)
+            {
+                attackPrefabsGlobal.Add(attack);
+            }
+        }
+        else
+        {
+            attackPrefabs.Clear();
+            foreach(var attack in attackPrefabsGlobal)
+            {
+                attackPrefabs.Add(attack);
+            }
+        }
+
         foreach (var spawnLocation in SpawnLocations)
         {
             Spawn(spawnLocation);
@@ -37,6 +55,7 @@ public class AttackSpawner : MonoBehaviour
     internal void AddNewAttack(GameObject gameObject)
     {
         attackPrefabs.Add(gameObject);
+        attackPrefabsGlobal.Add(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

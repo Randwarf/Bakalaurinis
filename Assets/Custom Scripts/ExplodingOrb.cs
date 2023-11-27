@@ -24,6 +24,7 @@ public class ExplodingOrb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OrbTarget"))
         {
+            Debug.Log("Hit something");
             Instantiate(ExplosionPrefab, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }

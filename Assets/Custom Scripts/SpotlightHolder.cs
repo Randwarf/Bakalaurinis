@@ -33,6 +33,7 @@ public class SpotlightHolder : MonoBehaviour
 
     public void LoadBattle()
     {
-        SceneManager.LoadScene("BattleScene");
+        Level.GetInstance().numberOfLoops = -1;
+        Level.GetInstance().LoadNext();
     }
 }
