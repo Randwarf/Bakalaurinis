@@ -1388,6 +1388,7 @@ MonoBehaviour:
   Rewards:
   - {fileID: 9178883535886006104, guid: 2c302fc1bca72dd4297bdc79499070a5, type: 3}
   - {fileID: 9178883535886006104, guid: 2c302fc1bca72dd4297bdc79499070a5, type: 3}
+  Throphy: {fileID: 3146417679373322673, guid: 0097ca5133fb6624f88ebd6ee30275f2, type: 3}
   StunVisual: {fileID: 802473941396510799}
   inkEffect: {fileID: 0}
   timeSinceLastInk: 0

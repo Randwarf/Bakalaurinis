@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     Collider collider;
+    public bool goToNextLevel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,18 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("something stepped on me");
         if (other is CharacterController)
         {
-            Debug.Log("playerStepped on me");
+            if (!goToNextLevel)
+            {
+                var location = GameObject.Find("TeleportSpot");
+                if (location)
+                {
+                    other.transform.position = location.transform.position;
+                    return;
+                }
+            }
+
             Level.GetInstance().LoadNext();
         }
     }

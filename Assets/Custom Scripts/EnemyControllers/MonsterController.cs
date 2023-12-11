@@ -16,6 +16,9 @@ public abstract class MonsterController : MonoBehaviour
     [SerializeField]
     protected List<GameObject> Rewards = new List<GameObject>();
 
+    [SerializeField]
+    protected GameObject Throphy;
+
     public GameObject StunVisual;
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public abstract class MonsterController : MonoBehaviour
         rewardPos.y = 0;
         var pedestal = Instantiate(RewardPedestal, rewardPos, Quaternion.identity);
         pedestal.GetComponent<RewardSpawner>().SpawnRewards(Rewards);
+        Instantiate(Throphy, GameObject.Find("ThrophySpawner").transform.position, UnityEngine.Random.rotation);
     }
 
     public void Stun()

@@ -362,6 +362,7 @@ MonoBehaviour:
   Rewards:
   - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
   - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
+  Throphy: {fileID: 3146417679373322673, guid: ff1660dfcc742f0448e2c60e5f4bdcb1, type: 3}
   StunVisual: {fileID: 4510487404187993725}
 --- !u!1 &4236951806886514533
 GameObject:
