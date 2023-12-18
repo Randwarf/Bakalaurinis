@@ -16,20 +16,9 @@ namespace Assets.Custom_Scripts
 
         public void Start()
         {
-            movementStrategy = new JumpStrategy(GetComponent<Rigidbody>());
+            movementStrategy = new JumpStrategy(gameObject);
             elementalType = Element.Water;
             inkEffect = GetComponent<InkApplier>();
-        }
-
-        public void Update()
-        {
-            movementStrategy.Move();
-            //timeSinceLastInk += Time.deltaTime;
-            //if (timeSinceLastInk > inkDelay )
-            //{
-            //    //inkEffect.ActivateInkEffect();
-            //    timeSinceLastInk = 0f;
-            //}
         }
     }
 }

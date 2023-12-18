@@ -31,10 +31,17 @@ public class BulletDamageSource : MonoBehaviour
         {
             monster.OnHit(damage, element);
             if(canStun) monster.Stun();
+            var gotAudio = TryGetComponent<AudioSource>(out var audio);
+            if (gotAudio)
+            {
+                AudioSource.PlayClipAtPoint(audio.clip, transform.position);
+            }
         }
         if (other.tag.Equals("OrbTarget"))
         {
             Destroy(gameObject);
         }
+
+        
     }
 }

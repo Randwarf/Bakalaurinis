@@ -10,15 +10,19 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
     public class JumpStrategy : IEnemyMovementStrategy
     {
         private Rigidbody _rigidbody;
+        private AudioSource _splatEffect;
+        private GameObject _gameObject;
         private float _timeSinceLastJump;
         private float _jumpInterval = 3f;
         private float _jumpForce = 7f;
 
         private bool _isLooping = true;
         
-        public JumpStrategy(Rigidbody rigidbody)
+        public JumpStrategy(GameObject gameObject)
         {
-            _rigidbody = rigidbody;
+            _gameObject = gameObject;
+            _rigidbody = _gameObject.GetComponent<Rigidbody>();
+            _splatEffect = _gameObject.GetComponent<AudioSource>();
             _timeSinceLastJump = 0;
         }
 
@@ -43,6 +47,7 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
         private void Jump()
         {
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _splatEffect.Play();
         }
 
         public void SetLooping(bool looping)
