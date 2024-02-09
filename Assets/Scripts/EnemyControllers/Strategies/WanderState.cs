@@ -2,30 +2,25 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-internal class WanderStrategy : IEnemyMovementStrategy
+internal class WanderState : BehaviourState
 {
     Vector3 _target;
     GameObject _unit;
     Rigidbody _rb;
     float _speed = 3f;
 
-    public WanderStrategy(GameObject unit)
+    public WanderState(GameObject unit)
     {
         _unit = unit;
         _rb = _unit.GetComponent<Rigidbody>();
         PickNewTarget();
     }
 
-    public bool DoneMoving()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Move()
+    public override void Update()
     {
         _unit.transform.LookAt(_target);
 
-        _rb.velocity = Direction()*_speed;
+        _rb.velocity = Direction() * _speed;
 
         if ((_target - _unit.transform.position).magnitude < 1f) PickNewTarget();
     }
@@ -47,10 +42,5 @@ internal class WanderStrategy : IEnemyMovementStrategy
 
         
         _target += randomDirection * randomMagnitude;
-    }
-
-    public void SetLooping(bool looping)
-    {
-        throw new System.NotImplementedException();
     }
 }

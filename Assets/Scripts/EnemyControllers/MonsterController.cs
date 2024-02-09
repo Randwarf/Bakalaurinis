@@ -9,7 +9,7 @@ public abstract class MonsterController : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth = 100;
-    public IEnemyMovementStrategy movementStrategy;
+    public BehaviourState behaviourState;
     protected Element elementalType;
 
     public GameObject RewardPedestal;
@@ -24,7 +24,12 @@ public abstract class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementStrategy.Move();
+        behaviourState.Update();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        behaviourState.OnCollisionEnter(collision);
     }
 
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
@@ -55,6 +60,6 @@ public abstract class MonsterController : MonoBehaviour
 
     public void Stun()
     {
-        movementStrategy = new StunStrategy(this, movementStrategy);
+        behaviourState = new StunState(gameObject, behaviourState);
     }
 }
