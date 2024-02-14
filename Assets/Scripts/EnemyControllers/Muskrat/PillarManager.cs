@@ -46,11 +46,13 @@ public class PillarManager : MonoBehaviour
     internal void EnablePillars()
     {
         Start();
-        pillars.ForEach(p => p.gameObject.SetActive(true));
+        gameObject.transform.LeanMoveLocalY(gameObject.transform.position.y + 1, 2f);
+        pillars.ForEach(p => p.particles.Play());
     }
 
     internal void DisablePillars()
     {
-        pillars.ForEach(p => p.gameObject.SetActive(false));
+        pillars.ForEach(p => p.particles.Play());
+        gameObject.transform.LeanMoveLocalY(gameObject.transform.position.y - 1, 2f);
     }
 }

@@ -8,6 +8,8 @@ public class HitablePillar : MonoBehaviour, IHitableObject
     public TextMeshPro textMeshPro;
     PillarManager manager;
     public int index;
+    public ParticleSystem particles;
+    
 
     // Start is called before the first frame update
     void Start()
