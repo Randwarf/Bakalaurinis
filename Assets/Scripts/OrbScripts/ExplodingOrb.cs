@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Rendering.FilterWindow;
 
 public class ExplodingOrb : MonoBehaviour
 {
@@ -22,11 +23,14 @@ public class ExplodingOrb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("OrbTarget"))
-        {
-            Debug.Log("Hit something");
-            Instantiate(ExplosionPrefab, transform.position, transform.rotation);
-            Destroy(this.gameObject);
-        }
+        var isHitable = collision.gameObject.TryGetComponent(out IHitableObject hitableObject);
+        if (isHitable)
+            Hit(hitableObject);
+    }
+
+    private void Hit(IHitableObject hitableObject)
+    {
+        Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+        Destroy(this.gameObject);
     }
 }

@@ -1262,6 +1262,7 @@ GameObject:
   - component: {fileID: 4234360325699949619}
   - component: {fileID: 6760927054718377040}
   - component: {fileID: 371167000878939341}
+  - component: {fileID: 1406734484234363326}
   m_Layer: 0
   m_Name: Squid
   m_TagString: OrbTarget
@@ -1490,6 +1491,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1406734484234363326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175731783906019889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6736474523131824775
 GameObject:
   m_ObjectHideFlags: 0

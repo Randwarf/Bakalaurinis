@@ -38,7 +38,10 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
         private void Jump()
         {
             _rigidbody.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
-            _splatEffect.Play();
+            if (_splatEffect)
+            {
+                _splatEffect.Play();
+            }
         }
     }
 }

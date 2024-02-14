@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 3512189200107991696}
   - component: {fileID: 70731779396164803}
   - component: {fileID: 7437009313407474709}
+  - component: {fileID: 6937288588408532802}
   m_Layer: 0
   m_Name: Gecko
   m_TagString: OrbTarget
@@ -364,6 +365,18 @@ MonoBehaviour:
   - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: ff1660dfcc742f0448e2c60e5f4bdcb1, type: 3}
   StunVisual: {fileID: 4510487404187993725}
+--- !u!114 &6937288588408532802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3528471057776053676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4236951806886514533
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,11 @@ public abstract class MonsterController : MonoBehaviour
         behaviourState.OnCollisionEnter(collision);
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        behaviourState.OnCollisionExit(collision);
+    }
+
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
     {
 
@@ -60,6 +65,13 @@ public abstract class MonsterController : MonoBehaviour
 
     public void Stun()
     {
-        behaviourState = new StunState(gameObject, behaviourState);
+        ChangeState(new StunState(gameObject, behaviourState));
+    }
+
+    public void ChangeState(BehaviourState newState)
+    {
+        behaviourState.End();
+        behaviourState = newState;
+        behaviourState.Start();
     }
 }

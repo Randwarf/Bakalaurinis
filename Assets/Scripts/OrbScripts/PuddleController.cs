@@ -33,15 +33,17 @@ public class PuddleController : MonoBehaviour
     {
         if (!CanCauseDamage()) return;
 
-        MonsterController monster;
-        var isMonster = other.gameObject.TryGetComponent<MonsterController>(out monster);
-        if (isMonster)
-        {
-            lastAttackTime = Time.time;
-            durability--;
-            monster.OnHit(damage, Element.Fire);
-        }
+        var isHitable = other.gameObject.TryGetComponent(out IHitableObject hitableObject);
+        if (isHitable)
+            Hit(hitableObject);
 
         if (durability <= 0) Destroy(gameObject);
+    }
+
+    private void Hit(IHitableObject hitableObject)
+    {
+        lastAttackTime = Time.time;
+        durability--;
+        hitableObject.Hit(damage, Element.Fire, false);
     }
 }

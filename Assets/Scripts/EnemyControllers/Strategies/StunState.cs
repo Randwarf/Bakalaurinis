@@ -12,13 +12,14 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
         private BehaviourState _previousState;
 
         private float _elapsedTime = 0f;
-        private float _stunTime = 2f;
+        private float _stunTime;
 
-        public StunState(GameObject controller, BehaviourState previousState) 
+        public StunState(GameObject controller, BehaviourState previousState, float stunTime = 2f) 
         {
             context = controller;
             _previousState = previousState;
             context.GetComponent<MonsterController>().StunVisual.SetActive(true);
+            _stunTime = stunTime;
         }
 
         public override void Update()
@@ -26,8 +27,9 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
             _elapsedTime += Time.deltaTime;
             if (_elapsedTime > _stunTime)
             {
-                context.GetComponent<MonsterController>().behaviourState = _previousState;
+                Debug.Log("Time to unstun");
                 context.GetComponent<MonsterController>().StunVisual.SetActive(false);
+                context.GetComponent<MonsterController>().ChangeState(_previousState);
             }
         }
     }

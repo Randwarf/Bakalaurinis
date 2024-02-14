@@ -6,6 +6,7 @@ public class BehaviourState
 
     public virtual void Start() { }
     public virtual void Update() { }
+    public virtual void End() { }
     public virtual void OnCollisionEnter(Collision collision) { }
     public virtual void OnCollisionExit(Collision collision) { }
 }

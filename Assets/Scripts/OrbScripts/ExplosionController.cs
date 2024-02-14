@@ -6,6 +6,7 @@ public class ExplosionController : MonoBehaviour
 {
     public int damage = 20;
     private Collider collider;
+    private Element element = Element.Fire;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,13 @@ public class ExplosionController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        MonsterController monster;
-        var isMonster = other.gameObject.TryGetComponent<MonsterController>(out monster);
-        if (isMonster)
-        {
-            monster.OnHit(damage, Element.Fire);
-            collider.enabled = false;
-        }
+        var isHitable = other.gameObject.TryGetComponent(out IHitableObject hitableObject);
+        if (isHitable)
+            Hit(hitableObject);
+    }
+
+    private void Hit(IHitableObject hitableObject)
+    {
+        hitableObject.Hit(damage, element, false);
     }
 }
