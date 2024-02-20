@@ -20,4 +20,11 @@ public class Level
         numberOfLoops++;
         SceneManager.LoadScene("BattleScene");
     }
+
+    public int TimeLimit()
+    {
+        if (numberOfLoops < 2) return -1;
+
+        return 180 / numberOfLoops;
+    }
 }

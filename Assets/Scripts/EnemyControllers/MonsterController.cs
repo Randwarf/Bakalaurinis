@@ -56,11 +56,17 @@ public abstract class MonsterController : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        SpawnReward();
+        Instantiate(Throphy, GameObject.Find("ThrophySpawner").transform.position, UnityEngine.Random.rotation);
+        FindAnyObjectByType<Timer>().TurnOff();
+    }
+
+    private void SpawnReward()
+    {
         Vector3 rewardPos = transform.position;
         rewardPos.y = 0;
         var pedestal = Instantiate(RewardPedestal, rewardPos, Quaternion.identity);
         pedestal.GetComponent<RewardSpawner>().SpawnRewards(Rewards);
-        Instantiate(Throphy, GameObject.Find("ThrophySpawner").transform.position, UnityEngine.Random.rotation);
     }
 
     public void Stun()
@@ -73,5 +79,10 @@ public abstract class MonsterController : MonoBehaviour
         behaviourState.End();
         behaviourState = newState;
         behaviourState.Start();
+    }
+
+    public void Lose()
+    {
+
     }
 }
