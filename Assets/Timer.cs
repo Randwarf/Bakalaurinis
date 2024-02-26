@@ -51,5 +51,6 @@ public class Timer : MonoBehaviour
 
     public void TimeOut()
     {
+        FindAnyObjectByType<MonsterController>().Lose();
     }
 }
