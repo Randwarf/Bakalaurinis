@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class Teleporter : MonoBehaviour
 {
     Collider collider;
     public bool goToNextLevel = false;
+
+    private GameObject location;
+    private Collider other;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +25,26 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other is CharacterController)
+        this.other = other;
+        if (this.other is CharacterController)
         {
             if (!goToNextLevel)
             {
-                var location = GameObject.Find("TeleportSpot");
+                location = GameObject.Find("TeleportSpot");
                 if (location)
                 {
-                    other.transform.position = location.transform.position;
+                    FindAnyObjectByType<BlinkEffect>().AnimateEyeClosed(Teleport);
                     return;
                 }
             }
 
-            Level.GetInstance().LoadNext();
+            FindAnyObjectByType<BlinkEffect>().AnimateEyeClosed(Level.GetInstance().LoadNext);
         }
+    }
+
+    private void Teleport()
+    {
+        other.transform.position = location.transform.position;
+        FindAnyObjectByType<BlinkEffect>().AnimateEyeOpen();
     }
 }

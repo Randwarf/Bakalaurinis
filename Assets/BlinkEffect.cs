@@ -10,14 +10,19 @@ public class BlinkEffect : MonoBehaviour
 
     public bool startOpen = false;
 
+    private Vector3 startingPosTopEyelid;
+    private Vector3 startingPosBottomEyelid;
+
     bool isOpen;
     float screenHeight;
 
     // Start is called before the first frame update
     void Start()
     {
+        startingPosTopEyelid = topEyelid.localPosition;
+        startingPosBottomEyelid = bottomEyelid.localPosition;
+
         screenHeight = 250;
-        Debug.Log(screenHeight);
 
         if (startOpen)
         {
@@ -45,5 +50,17 @@ public class BlinkEffect : MonoBehaviour
     {
         topEyelid.position = new Vector3(topEyelid.position.x, screenHeight, topEyelid.position.z);
         bottomEyelid.position = new Vector3(bottomEyelid.position.x, -screenHeight, bottomEyelid.position.z);
+    }
+
+    public void AnimateEyeClosed(Action action)
+    {
+        topEyelid.LeanMoveLocal(startingPosTopEyelid, 2);
+        bottomEyelid.LeanMoveLocal(startingPosBottomEyelid, 2).setOnComplete(action);
+    }
+
+    private void SetEyeClosed()
+    {
+        topEyelid.localPosition = startingPosTopEyelid;
+        bottomEyelid.localPosition = startingPosBottomEyelid;
     }
 }

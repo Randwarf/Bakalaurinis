@@ -13,7 +13,18 @@ public class Level
         return instance;
     }
 
+    public static Guid GetSessionID()
+    {
+        return GetInstance().SessionID;
+    }
+
     public int numberOfLoops = 0;
+    public Guid SessionID;
+
+    public Level()
+    {
+        SessionID = Guid.NewGuid();
+    }
 
     internal void LoadNext()
     {
@@ -26,5 +37,13 @@ public class Level
         if (numberOfLoops < 2) return -1;
 
         return 180 / numberOfLoops;
+    }
+
+    internal void TeleportToSpawn()
+    {
+        numberOfLoops = 0;
+        SessionID = Guid.NewGuid();
+        AttackSpawner.attackPrefabsGlobal = null;
+        SceneManager.LoadScene("MainScene");
     }
 }

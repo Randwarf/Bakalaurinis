@@ -83,6 +83,6 @@ public abstract class MonsterController : MonoBehaviour
 
     public void Lose()
     {
-
+        FindAnyObjectByType<BlinkEffect>().AnimateEyeClosed(Level.GetInstance().TeleportToSpawn);
     }
 }
