@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,5 +19,15 @@ public static class UTILS
             position.y = 0;
 
         gameObject.transform.LookAt(position);
+    }
+
+    public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list)
+    {
+        return list.OrderBy(_ => Random.value);
+    }
+
+    public static IEnumerable<int> Shuffle(int startInclusive, int endInclusive, int stepSize = 1) 
+    {
+        return Enumerable.Range(startInclusive, endInclusive - startInclusive).Shuffle();
     }
 }

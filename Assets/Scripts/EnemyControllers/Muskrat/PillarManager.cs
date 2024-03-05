@@ -32,7 +32,7 @@ public class PillarManager : MonoBehaviour
 
     private void Shuffle()
     {
-        Symbols = Symbols.OrderBy(_ => Random.value).ToList();
+        Symbols = Symbols.Shuffle().ToList();
     }
 
     public void OnHit(int hitIndex)
