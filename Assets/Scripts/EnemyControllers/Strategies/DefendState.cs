@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DefendState : BehaviourState
 {
-    MuskratController controller;
+    IDefensiveMonster controller;
 
     public DefendState (GameObject context)
     {
@@ -15,13 +15,12 @@ public class DefendState : BehaviourState
     public override void Start()
     {
         UTILS.LookAtCamera(context);
-        controller = context.GetComponent<MuskratController>();
-        controller.isImmune = true;
+        controller = context.GetComponent<IDefensiveMonster>();
         controller.EnableShields();
     }
 
     public override void End()
     {
-        controller.isImmune = false;
+        controller.DisableShields();
     }
 }

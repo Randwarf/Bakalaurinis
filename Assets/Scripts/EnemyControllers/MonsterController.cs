@@ -39,6 +39,7 @@ public abstract class MonsterController : MonoBehaviour
 
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
     {
+        behaviourState.Hit();
 
         float effectiveness = ElementalEffectiveness.GetEffectiveness(attackerElement, elementalType);
         currentHealth -= (int)(damage * effectiveness);
@@ -69,9 +70,9 @@ public abstract class MonsterController : MonoBehaviour
         pedestal.GetComponent<RewardSpawner>().SpawnRewards(Rewards);
     }
 
-    public void Stun()
+    public void Stun(float time = 2f)
     {
-        ChangeState(new StunState(gameObject, behaviourState));
+        ChangeState(new StunState(gameObject, behaviourState, time));
     }
 
     public void ChangeState(BehaviourState newState)

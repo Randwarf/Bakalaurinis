@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow
       objectReference: {fileID: 0}
+    - target: {fileID: 4679712780800188585, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
+      propertyPath: StunVisual
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6406159489155621780, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.31
@@ -403,6 +407,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4679712780800188585, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
     - {fileID: 3793260118197838011, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
+    - {fileID: 7299689024876657616, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
+    - {fileID: 7136001450648300303, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8254205435872085693, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}
     - {fileID: 239149487100376832, guid: 2303309d36699044b9ba5a80cc10888b, type: 3}

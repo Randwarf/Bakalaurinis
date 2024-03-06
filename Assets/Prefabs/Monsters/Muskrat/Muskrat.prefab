@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ba60a4d94b15b49a16ffbc6a790c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pillars:
+  Relays:
   - {fileID: 301385121240732570}
   - {fileID: 4854796651024043566}
   - {fileID: 117117173805383173}

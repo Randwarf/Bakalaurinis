@@ -27,9 +27,23 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
             _elapsedTime += Time.deltaTime;
             if (_elapsedTime > _stunTime)
             {
-                context.GetComponent<MonsterController>().StunVisual.SetActive(false);
-                context.GetComponent<MonsterController>().ChangeState(_previousState);
+                Unstun();
             }
+        }
+
+        private void Unstun()
+        {
+            context.GetComponent<MonsterController>().ChangeState(_previousState);
+        }
+
+        public override void Hit()
+        {
+            Unstun();
+        }
+
+        public override void End()
+        {
+            context.GetComponent<MonsterController>().StunVisual.SetActive(false);
         }
     }
 }

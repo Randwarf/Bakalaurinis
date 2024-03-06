@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PillarManager : MonoBehaviour
+public class PillarManager : RelayManager
 {
-    public List<HitablePillar> pillars = new List<HitablePillar>();
     public MuskratController muskratController;
 
     private List<char> Symbols = new List<char>() {'A', 'B', 'C', 'D' };
     private int correctIndex;
+    private float startingY;
 
     // Start is called before the first frame update
     void Start()
     {
-        Shuffle();
+        startingY = transform.localPosition.y;
+        Symbols = Symbols.Shuffle().ToList();
         correctIndex = Random.Range(0, Symbols.Count - 1);
         muskratController.setSymbol(Symbols[correctIndex]);
         SetPillars();
@@ -24,35 +25,31 @@ public class PillarManager : MonoBehaviour
 
     private void SetPillars()
     {
-        for(int i = 0; i < pillars.Count; i++)
+        for(int i = 0; i < Relays.Count; i++)
         {
-            pillars[i].setData(i, Symbols[i].ToString());
+            ((HitablePillar)Relays[i]).setData(i, Symbols[i].ToString());
         }
     }
 
-    private void Shuffle()
+    public override void Hit(int relayIndex, int damage, Element element, bool stun)
     {
-        Symbols = Symbols.Shuffle().ToList();
-    }
-
-    public void OnHit(int hitIndex)
-    {
-        if (hitIndex == correctIndex)
+        if (relayIndex == correctIndex)
         {
-            muskratController.DisableShields();
+            muskratController.Stun(5f);
         }
     }
 
+    //TODO: Fix animations - if one animation cancels out the other, pillars end up in wrong positions
     internal void EnablePillars()
     {
         Start();
-        gameObject.transform.LeanMoveLocalY(gameObject.transform.position.y + 1, 2f);
-        pillars.ForEach(p => p.particles.Play());
+        gameObject.transform.LeanMoveLocalY(startingY + 1, 2f);
+        Relays.ForEach(p => ((HitablePillar)p).particles.Play());
     }
 
     internal void DisablePillars()
     {
-        pillars.ForEach(p => p.particles.Play());
-        gameObject.transform.LeanMoveLocalY(gameObject.transform.position.y - 1, 2f);
+        Relays.ForEach(p => ((HitablePillar)p).particles.Play());
+        gameObject.transform.LeanMoveLocalY(startingY, 2f);
     }
 }

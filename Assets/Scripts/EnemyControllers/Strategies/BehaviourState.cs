@@ -9,4 +9,5 @@ public class BehaviourState
     public virtual void End() { }
     public virtual void OnCollisionEnter(Collision collision) { }
     public virtual void OnCollisionExit(Collision collision) { }
+    public virtual void Hit() { }
 }

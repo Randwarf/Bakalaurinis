@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Assets.Custom_Scripts
 {
-    public class MuskratController : MonsterController
+    public class MuskratController : MonsterController, IDefensiveMonster
     {
         public PillarManager pillarManager;
         public TextMeshPro text;
@@ -25,17 +25,18 @@ namespace Assets.Custom_Scripts
             behaviourState.Start();
         }
 
-        internal void DisableShields()
+        public void DisableShields()
         {
             shield.SetActive(false);
-            ChangeState(new StunState(gameObject, behaviourState, 5f));
             pillarManager.DisablePillars();
+            isImmune = false;
         }
 
-        internal void EnableShields()
+        public void EnableShields()
         {
             shield.SetActive(true);
             pillarManager.EnablePillars();
+            isImmune = true;
         }
 
         internal void setSymbol(char v)

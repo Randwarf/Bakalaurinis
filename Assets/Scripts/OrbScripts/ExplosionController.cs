@@ -25,7 +25,9 @@ public class ExplosionController : MonoBehaviour
     {
         var isHitable = other.gameObject.TryGetComponent(out IHitableObject hitableObject);
         if (isHitable)
+        {
             Hit(hitableObject);
+        }
     }
 
     private void Hit(IHitableObject hitableObject)
