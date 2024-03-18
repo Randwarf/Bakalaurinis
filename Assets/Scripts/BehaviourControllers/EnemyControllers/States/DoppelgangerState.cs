@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.EnemyControllers.States
 {
-    public class DoppelgangerState : BehaviourState
+    public class DoppelgangerState : MonsterBehaviourState
     {
         public DoppelgangerState(GameObject context) 
         {

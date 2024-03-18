@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +8,14 @@ using UnityEngine;
 
 namespace Assets.Custom_Scripts.EnemyControllers.Strategies
 {
-    public class StunState : BehaviourState
+    public class StunState : MonsterBehaviourState
     {
-        private BehaviourState _previousState;
+        private MonsterBehaviourState _previousState;
 
         private float _elapsedTime = 0f;
         private float _stunTime;
 
-        public StunState(GameObject controller, BehaviourState previousState, float stunTime = 2f) 
+        public StunState(GameObject controller, MonsterBehaviourState previousState, float stunTime = 2f) 
         {
             context = controller;
             _previousState = previousState;
@@ -36,7 +37,7 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
             context.GetComponent<MonsterController>().ChangeState(_previousState);
         }
 
-        public override void Hit()
+        public override void GotHit()
         {
             Unstun();
         }

@@ -1,9 +1,10 @@
 using Assets.Custom_Scripts;
+using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefendState : BehaviourState
+public class DefendState : MonsterBehaviourState
 {
     IDefensiveMonster controller;
 

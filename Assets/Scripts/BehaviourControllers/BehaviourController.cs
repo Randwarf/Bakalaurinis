@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BehaviourController : MonoBehaviour
+public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where TBehaviourState : BehaviourState
 {
-    public BehaviourState behaviourState;
+    public TBehaviourState behaviourState;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +22,7 @@ public abstract class BehaviourController : MonoBehaviour
         behaviourState.OnCollisionExit(collision);
     }
 
-    public void ChangeState(BehaviourState newState)
+    public void ChangeState(TBehaviourState newState)
     {
         behaviourState.End();
         behaviourState = newState;

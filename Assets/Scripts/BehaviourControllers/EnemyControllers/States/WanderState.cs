@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-internal class WanderState : BehaviourState
+internal class WanderState : MonsterBehaviourState
 {
     Vector3 _target;
     GameObject _unit;

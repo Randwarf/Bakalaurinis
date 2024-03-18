@@ -1,8 +1,9 @@
+using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashState : BehaviourState
+public class DashState : MonsterBehaviourState
 {
     public float MOVE_SPEED = 4000f;
     public float DASH_DURATION = 2f;

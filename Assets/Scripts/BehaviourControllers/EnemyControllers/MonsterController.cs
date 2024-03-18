@@ -1,11 +1,12 @@
 using Assets.Custom_Scripts.EnemyControllers.Strategies;
+using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class MonsterController : BehaviourController
+public abstract class MonsterController : BehaviourController<MonsterBehaviourState>
 {
     public int maxHealth = 100;
     public int currentHealth = 100;
@@ -23,7 +24,7 @@ public abstract class MonsterController : BehaviourController
 
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
     {
-        behaviourState.Hit();
+        behaviourState.GotHit();
 
         float effectiveness = ElementalEffectiveness.GetEffectiveness(attackerElement, elementalType);
         currentHealth -= (int)(damage * effectiveness);

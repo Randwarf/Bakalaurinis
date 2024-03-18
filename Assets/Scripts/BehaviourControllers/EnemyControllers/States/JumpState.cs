@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.BehaviourControllers.EnemyControllers.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Custom_Scripts.EnemyControllers.Strategies
 {
-    public class JumpState : BehaviourState
+    public class JumpState : MonsterBehaviourState
     {
         private Rigidbody _rigidbody;
         private AudioSource _splatEffect;
