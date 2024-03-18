@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class MonsterController : MonoBehaviour
+public abstract class MonsterController : BehaviourController
 {
     public int maxHealth = 100;
     public int currentHealth = 100;
-    public BehaviourState behaviourState;
+    
     protected Element elementalType;
 
     public GameObject RewardPedestal;
@@ -20,22 +20,6 @@ public abstract class MonsterController : MonoBehaviour
     protected GameObject Throphy;
 
     public GameObject StunVisual;
-
-    // Update is called once per frame
-    void Update()
-    {
-        behaviourState.Update();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        behaviourState.OnCollisionEnter(collision);
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        behaviourState.OnCollisionExit(collision);
-    }
 
     public virtual void OnHit(int damage, Element attackerElement = Element.Normal)
     {
@@ -73,13 +57,6 @@ public abstract class MonsterController : MonoBehaviour
     public void Stun(float time = 2f)
     {
         ChangeState(new StunState(gameObject, behaviourState, time));
-    }
-
-    public void ChangeState(BehaviourState newState)
-    {
-        behaviourState.End();
-        behaviourState = newState;
-        behaviourState.Start();
     }
 
     public void Lose()
