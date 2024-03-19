@@ -21,7 +21,7 @@ namespace Assets.Custom_Scripts
         {
             elementalType = Element.Normal;
 
-            behaviourState = new DefendState(gameObject);
+            ChangeState(new DefendState(gameObject));
             behaviourState.Start();
         }
 

@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Utilities.Tweenables.Primitives;
 
 public class PreDashState : MonsterBehaviourState
 {
-    public float MOVE_SPEED = 1000f;
+    public float MOVE_SPEED = 100f;
     public float DASH_COOLDOWN = 2f;
     public float PERLIN_SCALE = 5f;
     public float PERLIN_MULTIPLIER = 10f;

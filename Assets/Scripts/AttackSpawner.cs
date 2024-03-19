@@ -48,7 +48,16 @@ public class AttackSpawner : MonoBehaviour
     {
         var attackIndex = Random.Range(0, attackPrefabs.Count);
         var attack = Instantiate(attackPrefabs[attackIndex], parent.position, parent.rotation);
-        attack.GetComponent<UiOrb>().parent = parent;
+        var isOldVersion = attack.TryGetComponent<UiOrb>(out UiOrb uiOrb);
+        if (isOldVersion)
+        {
+            uiOrb.parent = parent;
+        }
+        else
+        {
+            var orb = attack.GetComponent<OrbController>();
+            orb.UISlot = parent;
+        }
         attack.transform.SetParent(parent);
     }
 

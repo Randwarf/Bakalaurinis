@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
         var enemyID = Level.GetInstance().numberOfLoops % EnemyPrefabs.Count;
 
-        Instantiate(EnemyPrefabs[enemyID]);
+        Instantiate(EnemyPrefabs[enemyID], transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

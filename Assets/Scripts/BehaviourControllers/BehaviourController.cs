@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where TBehaviourState : BehaviourState
 {
-    public TBehaviourState behaviourState;
+    public TBehaviourState behaviourState { get; private set; }
 
     // Update is called once per frame
     void Update()
@@ -24,7 +24,10 @@ public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where
 
     public void ChangeState(TBehaviourState newState)
     {
-        behaviourState.End();
+        if (behaviourState != null)
+        { 
+            behaviourState.End(); 
+        }
         behaviourState = newState;
         behaviourState.Start();
     }

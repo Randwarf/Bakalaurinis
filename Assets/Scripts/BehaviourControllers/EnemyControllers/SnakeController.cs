@@ -12,7 +12,7 @@ public class SnakeController : MonsterController, IDashingMonster
     // Start is called before the first frame update
     void Start()
     {
-        behaviourState = new PreDashState(gameObject);
+        ChangeState(new PreDashState(gameObject));
     }
 
     public void startDashing(float rotationSpeed)

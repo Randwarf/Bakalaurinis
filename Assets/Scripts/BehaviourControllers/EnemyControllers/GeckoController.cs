@@ -7,7 +7,7 @@ public class GeckoController : MonsterController
     // Start is called before the first frame update
     void Start()
     {
-        behaviourState = new WanderState(gameObject);
+        ChangeState(new WanderState(gameObject));
         elementalType = Element.Normal;
     }
 

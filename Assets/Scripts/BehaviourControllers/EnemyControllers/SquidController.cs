@@ -16,7 +16,7 @@ namespace Assets.Custom_Scripts
 
         public void Start()
         {
-            behaviourState = new JumpState(gameObject);
+            ChangeState(new JumpState(gameObject));
             elementalType = Element.Water;
             inkEffect = GetComponent<InkApplier>();
         }

@@ -25,7 +25,7 @@ public class SparrowController : MonsterController, IDefensiveMonster
     // Start is called before the first frame update
     void Start()
     {
-        behaviourState = new DefendState(gameObject);
+        ChangeState(new DefendState(gameObject));
         behaviourState.Start();
         elementalType = Element.Fire;
         UTILS.LookAtCamera(gameObject);

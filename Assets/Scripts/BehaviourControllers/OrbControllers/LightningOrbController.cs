@@ -8,12 +8,13 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
 {
     public class LightningOrbController : OrbController
     {
-        public UIState UIState;
-
+        
         public override void Start()
         {
             base.Start();
-            UIState = new UIState();
+            UIState = new UIState(gameObject, uiObjects);
+            ActionState = new DirectHitState(gameObject, actionObjects);
+            ChangeState(UIState);
         }
     }
 }

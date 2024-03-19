@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DashState : MonsterBehaviourState
 {
-    public float MOVE_SPEED = 4000f;
+    public float MOVE_SPEED = 200f;
     public float DASH_DURATION = 2f;
 
     private Rigidbody rb;

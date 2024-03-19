@@ -168,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 40
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -336,8 +336,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.31926775, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0.48235294}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5371,9 +5371,9 @@ GameObject:
   - component: {fileID: 4055851478538413755}
   - component: {fileID: -8738310545875862763}
   - component: {fileID: -2712189982051430665}
-  - component: {fileID: 2271215878258605385}
+  - component: {fileID: 5579930602590299920}
   m_Layer: 0
-  m_Name: LightningOrb
+  m_Name: FloatingOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5646,7 +5646,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &2271215878258605385
+--- !u!114 &5579930602590299920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5655,12 +5655,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9178883535886006104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a630cbfed551e940bc4a26e363d95e6, type: 3}
+  m_Script: {fileID: 11500000, guid: c1d189455ce299b40b6a09ccfe66577e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 0
   canStun: 0
-  element: 2
+  element: 0
   tooltip: {fileID: 826219875227596357}
   uiObjects: {fileID: 4712633189422614816}
   actionObjects: {fileID: 6338913532376887413}

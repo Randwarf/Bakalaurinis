@@ -15,10 +15,14 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
     public GameObject actionObjects;
 
     [NonSerialized]
-    public Transform parent;
+    public Transform UISlot;
+    [NonSerialized]
+    public OrbBehaviourState UIState;
+    [NonSerialized]
+    public OrbBehaviourState ActionState;
     private XRGrabInteractable interactable;
 
-    public void Start()
+    public virtual void Start()
     {
         AddGrabInteractableListeners();
         AnimatePopUp();
@@ -60,7 +64,7 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
         behaviourState.OnRelease(args);
     }
 
-    protected void PlayHitAudio()
+    public void PlayHitAudio()
     {
         var hasAudio = TryGetComponent(out AudioSource audio);
         if (hasAudio)
