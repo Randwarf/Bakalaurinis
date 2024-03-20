@@ -24,6 +24,12 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
 
         public override void OnRelease(SelectExitEventArgs args)
         {
+            if (controller.isHoveringDeck)
+            {
+                context.transform.LeanMoveLocal(Vector3.zero, 0.1f);
+                controller.ChangeState(controller.UIState);
+                return;
+            }
             //return to deck; else
             context.GetComponent<Rigidbody>().isKinematic = false;
             var spawner = UnityEngine.Object.FindAnyObjectByType<AttackSpawner>();
@@ -35,6 +41,7 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
         public override void Start()
         {
             context.GetComponent<Rigidbody>().isKinematic = false;
+            context.GetComponent<Collider>().isTrigger = true;
         }
 
         public override void End()
@@ -42,9 +49,9 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
             actionObjects.SetActive(false);
         }
 
-        public override void OnCollisionEnter(Collision collision)
+        public override void OnTriggerEnter(Collider other)
         {
-            var isHitable = collision.gameObject.TryGetComponent(out IHitableObject hitableObject);
+            var isHitable = other.gameObject.TryGetComponent(out IHitableObject hitableObject);
             if (isHitable)
                 HitTarget(hitableObject);
         }

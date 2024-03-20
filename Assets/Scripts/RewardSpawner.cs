@@ -21,7 +21,12 @@ public class RewardSpawner : MonoBehaviour
         foreach (var position in SpawnPositions)
         {
             var randomRewardIndex = Random.Range(0, Rewards.Count);
-            Instantiate(Rewards[randomRewardIndex], position.position, Quaternion.identity);
+            var orb = Instantiate(Rewards[randomRewardIndex], position.position, Quaternion.identity);
+            var isOrbController = orb.TryGetComponent(out OrbController controller);
+            if (isOrbController)
+            {
+                controller.ChangeState(controller.RewardState);
+            }
         }
     }
 }

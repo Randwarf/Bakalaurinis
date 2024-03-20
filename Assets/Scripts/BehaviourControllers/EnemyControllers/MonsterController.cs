@@ -36,7 +36,11 @@ public abstract class MonsterController : BehaviourController<MonsterBehaviourSt
 
         var uiController = FindAnyObjectByType<HealthUIController>();
         if (uiController) uiController.UpdateHealth(currentHealth, maxHealth);
-        
+    }
+
+    public void OnHit(float damage, Element attackerElement = Element.Normal)
+    {
+        OnHit((int)damage, attackerElement);
     }
 
     private void Die()

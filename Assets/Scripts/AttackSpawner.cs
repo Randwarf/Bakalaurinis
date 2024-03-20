@@ -57,6 +57,7 @@ public class AttackSpawner : MonoBehaviour
         {
             var orb = attack.GetComponent<OrbController>();
             orb.UISlot = parent;
+            orb.ChangeState(orb.UIState);
         }
         attack.transform.SetParent(parent);
     }
@@ -70,22 +71,40 @@ public class AttackSpawner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         RewardOrb rewardOrb;
-        var isRewardOrb = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
-        if (isRewardOrb)
+        var isOldVersion = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
+        if (isOldVersion)
         {
             RewardAura.SetActive(true);
             rewardOrb.canBeAddedToDeck = true;
+        }
+        else
+        {
+            var isOrb = other.gameObject.TryGetComponent(out OrbController orbController);
+            if (isOrb && orbController.isGrabbed)
+            {
+                RewardAura.SetActive(true);
+                orbController.isHoveringDeck = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         RewardOrb rewardOrb;
-        var isRewardOrb = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
-        if (isRewardOrb)
+        var isOldVersion = other.gameObject.TryGetComponent<RewardOrb>(out rewardOrb);
+        if (isOldVersion)
         {
             RewardAura.SetActive(false);
             rewardOrb.canBeAddedToDeck = false;
+        }
+        else
+        {
+            var isOrb = other.gameObject.TryGetComponent(out OrbController orbController);
+            if (isOrb)
+            {
+                RewardAura.SetActive(false);
+                orbController.isHoveringDeck = false;
+            }
         }
     }
 }

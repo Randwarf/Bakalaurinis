@@ -294,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8227414131676891763}
   - component: {fileID: 6076339690680861469}
+  - component: {fileID: 5166589715724994408}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -337,6 +338,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.18986022, y: 0.43256044, z: 0.33001137}
   m_Center: {x: 0.003418386, y: 0.39652407, z: 0.18287945}
+--- !u!114 &5166589715724994408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317430389838446505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageMultiplier: 1
+  Controller: {fileID: 0}
 --- !u!1 &3597520896480965596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9129692575244942701}
   - component: {fileID: 4418937237659436041}
+  - component: {fileID: 9013684778466446578}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1161,6 +1177,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19498777, y: 0.2696226, z: 0.96573114}
   m_Center: {x: 0.004272938, y: 0.14812593, z: -0.11642718}
+--- !u!114 &9013684778466446578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780869136315034350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageMultiplier: 0.8
+  Controller: {fileID: 0}
 --- !u!1 &8027681700293034052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6967977723402956023}
   - component: {fileID: 5691259474480919848}
+  - component: {fileID: 5073776155938738318}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1214,6 +1245,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23942566, y: 0.19863069, z: 0.61369896}
   m_Center: {x: -0.0008544922, y: 0.66164345, z: 0.2999997}
+--- !u!114 &5073776155938738318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027681700293034052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageMultiplier: 1.25
+  Controller: {fileID: 0}
 --- !u!1 &8215652704947636935
 GameObject:
   m_ObjectHideFlags: 0

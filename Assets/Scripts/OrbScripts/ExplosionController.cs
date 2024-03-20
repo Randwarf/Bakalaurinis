@@ -33,5 +33,6 @@ public class ExplosionController : MonoBehaviour
     private void Hit(IHitableObject hitableObject)
     {
         hitableObject.Hit(damage, element, false);
+        collider.enabled = false;
     }
 }

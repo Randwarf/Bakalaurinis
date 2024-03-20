@@ -974,8 +974,8 @@ MonoBehaviour:
   currentHealth: 100
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
-  - {fileID: 9178883535886006104, guid: 2c302fc1bca72dd4297bdc79499070a5, type: 3}
   - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
+  - {fileID: 9178883535886006104, guid: 2c302fc1bca72dd4297bdc79499070a5, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: e954984da080241438f899b839bcb409, type: 3}
   StunVisual: {fileID: 218143814579693097}
   pillarManager: {fileID: 1879548706487906386}

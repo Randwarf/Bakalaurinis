@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7537294456212578485}
   - component: {fileID: 8780441143276696128}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: FireOrb_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

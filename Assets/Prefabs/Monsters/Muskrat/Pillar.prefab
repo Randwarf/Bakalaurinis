@@ -5151,6 +5151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d1100f9ef655a43b3afaba80be9b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  RelayIndex: 0
   textMeshPro: {fileID: 4275099057650164782}
-  index: 0
   particles: {fileID: 7345247286362796662}

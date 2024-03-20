@@ -16,6 +16,7 @@ public class UIState : OrbBehaviourState
     public override void Start()
     {
         context.GetComponent<Rigidbody>().isKinematic = true;
+        context.GetComponent<Collider>().isTrigger = false;
         OrbController.uiObjects.SetActive(true);
     }
 

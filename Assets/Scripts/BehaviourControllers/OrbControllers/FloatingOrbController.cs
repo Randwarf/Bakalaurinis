@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class FloatingOrbController : OrbController
 {
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
-        UIState = new UIState(gameObject, uiObjects);
+        base.Awake();
         ActionState = new FloatingOrbState(gameObject, actionObjects);
-        ChangeState(UIState);
 
         damage = 40;
     }

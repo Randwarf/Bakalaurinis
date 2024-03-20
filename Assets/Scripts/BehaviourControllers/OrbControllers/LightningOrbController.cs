@@ -9,10 +9,9 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
     public class LightningOrbController : OrbController
     {
         
-        public override void Start()
+        public override void Awake()
         {
-            base.Start();
-            UIState = new UIState(gameObject, uiObjects);
+            base.Awake();
             ActionState = new DirectHitState(gameObject, actionObjects);
             ChangeState(UIState);
         }

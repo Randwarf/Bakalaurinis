@@ -5664,3 +5664,4 @@ MonoBehaviour:
   tooltip: {fileID: 826219875227596357}
   uiObjects: {fileID: 4712633189422614816}
   actionObjects: {fileID: 6338913532376887413}
+  selfPrefab: {fileID: 9178883535886006104}

@@ -1,3 +1,4 @@
+using Assets.Scripts.BehaviourControllers.OrbControllers.OrbStates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,19 +14,31 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
     public GameObject tooltip;
     public GameObject uiObjects;
     public GameObject actionObjects;
+    public GameObject selfPrefab;
 
     [NonSerialized]
     public Transform UISlot;
     [NonSerialized]
+    public bool isHoveringDeck;
+    [NonSerialized]
+    public bool isGrabbed = false;
+
+    [NonSerialized]
     public OrbBehaviourState UIState;
     [NonSerialized]
     public OrbBehaviourState ActionState;
+    [NonSerialized]
+    public OrbBehaviourState RewardState;
+
     private XRGrabInteractable interactable;
 
-    public virtual void Start()
+    public virtual void Awake()
     {
         AddGrabInteractableListeners();
         AnimatePopUp();
+
+        UIState = new UIState(gameObject, uiObjects);
+        RewardState = new RewardState(gameObject);
     }
 
     private void AnimatePopUp()
@@ -56,11 +69,13 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
 
     public void OnSelectEnter(SelectEnterEventArgs args)
     {
+        isGrabbed = true;
         behaviourState.OnGrab(args);
     }
 
     public void OnSelectExit(SelectExitEventArgs args)
     {
+        isGrabbed = false;
         behaviourState.OnRelease(args);
     }
 
@@ -73,4 +88,12 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
         }
     }
 
+    public override void DestroyAll()
+    {
+        base.DestroyAll();
+        UIState = null;
+        ActionState = null;
+        RewardState = null;
+        Destroy(gameObject);
+    }
 }

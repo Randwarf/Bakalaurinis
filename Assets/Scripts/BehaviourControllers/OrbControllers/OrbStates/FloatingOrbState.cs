@@ -19,5 +19,13 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers.OrbStates
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezePositionY;
         }
+
+        public override void End()
+        {
+            base.End();
+            var rb = context.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.constraints = RigidbodyConstraints.None;
+        }
     }
 }

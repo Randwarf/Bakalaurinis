@@ -22,6 +22,16 @@ public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where
         behaviourState.OnCollisionExit(collision);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        behaviourState.OnTriggerEnter(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        behaviourState.OnTriggerExit(other);
+    }
+
     public void ChangeState(TBehaviourState newState)
     {
         if (behaviourState != null)
@@ -30,5 +40,10 @@ public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where
         }
         behaviourState = newState;
         behaviourState.Start();
+    }
+
+    public virtual void DestroyAll()
+    {
+        behaviourState = null;
     }
 }
