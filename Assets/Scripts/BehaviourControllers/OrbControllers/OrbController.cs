@@ -14,8 +14,9 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
     public GameObject tooltip;
     public GameObject uiObjects;
     public GameObject actionObjects;
-    public GameObject selfPrefab;
 
+    [NonSerialized]
+    public GameObject rewardPrefab;
     [NonSerialized]
     public Transform UISlot;
     [NonSerialized]

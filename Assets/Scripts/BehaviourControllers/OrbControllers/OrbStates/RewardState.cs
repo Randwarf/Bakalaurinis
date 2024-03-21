@@ -31,9 +31,9 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers.OrbStates
             if(OrbController.isHoveringDeck)
             {
                 var attackSpawner = UnityEngine.Object.FindAnyObjectByType<AttackSpawner>();
-                attackSpawner.AddNewAttack(OrbController.selfPrefab);
+                attackSpawner.AddNewAttack(OrbController.rewardPrefab);
                 attackSpawner.RewardAura.SetActive(false);
-                OrbController.DestroyAll();
+                context.SetActive(false);
             }
         }
     }

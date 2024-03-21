@@ -10,7 +10,19 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers.OrbStates
 {
     public class FloatingOrbState : DirectHitState
     {
+        private float LIFESPAN_DURATION = 5f;
+        private float lifespan = 0f;
+
         public FloatingOrbState(GameObject context, GameObject actionObjects) : base(context, actionObjects) { }
+
+        public override void Update()
+        {
+            lifespan += Time.deltaTime;
+            if (lifespan > LIFESPAN_DURATION)
+            {
+                UnityEngine.Object.Destroy(context);
+            }
+        }
 
         public override void OnRelease(SelectExitEventArgs args)
         {

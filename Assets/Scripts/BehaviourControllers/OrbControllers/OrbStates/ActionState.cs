@@ -30,7 +30,6 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
                 controller.ChangeState(controller.UIState);
                 return;
             }
-            //return to deck; else
             context.GetComponent<Rigidbody>().isKinematic = false;
             var spawner = UnityEngine.Object.FindAnyObjectByType<AttackSpawner>();
             spawner.Spawn(controller.UISlot);

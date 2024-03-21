@@ -25,6 +25,7 @@ public class RewardSpawner : MonoBehaviour
             var isOrbController = orb.TryGetComponent(out OrbController controller);
             if (isOrbController)
             {
+                controller.rewardPrefab = Rewards[randomRewardIndex];
                 controller.ChangeState(controller.RewardState);
             }
         }
