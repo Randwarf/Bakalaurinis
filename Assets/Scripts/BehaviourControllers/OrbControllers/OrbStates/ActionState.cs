@@ -30,6 +30,7 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
                 controller.ChangeState(controller.UIState);
                 return;
             }
+
             context.GetComponent<Rigidbody>().isKinematic = false;
             var spawner = UnityEngine.Object.FindAnyObjectByType<AttackSpawner>();
             spawner.Spawn(controller.UISlot);
@@ -41,6 +42,7 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
         {
             context.GetComponent<Rigidbody>().isKinematic = false;
             context.GetComponent<Collider>().isTrigger = true;
+            context.GetComponent<XRGrabInteractable>().throwVelocityScale = 5;
         }
 
         public override void End()

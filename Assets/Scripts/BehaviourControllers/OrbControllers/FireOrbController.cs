@@ -19,6 +19,7 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
             ChangeState(UIState);
 
             damage = 20;
+            element = Element.Fire;
         }
 
         public void Replace()
