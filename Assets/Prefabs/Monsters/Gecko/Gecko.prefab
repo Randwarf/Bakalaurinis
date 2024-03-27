@@ -339,8 +339,8 @@ MonoBehaviour:
   currentHealth: 100
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
+  - {fileID: 9178883535886006104, guid: 381fcfcefa06b5e40a5618a8fb6dc951, type: 3}
+  - {fileID: 9178883535886006104, guid: 381fcfcefa06b5e40a5618a8fb6dc951, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: ff1660dfcc742f0448e2c60e5f4bdcb1, type: 3}
   StunVisual: {fileID: 4510487404187993725}
 --- !u!114 &6937288588408532802
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3528471057776053676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b85cf5ff8b180f41bf82800ad45c6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4236951806886514533

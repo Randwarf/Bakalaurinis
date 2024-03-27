@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 4234360325699949619}
   - component: {fileID: 6760927054718377040}
   - component: {fileID: 371167000878939341}
-  - component: {fileID: 1406734484234363326}
+  - component: {fileID: 2320861752894982252}
   m_Layer: 0
   m_Name: Squid
   m_TagString: OrbTarget
@@ -1278,8 +1278,8 @@ MonoBehaviour:
   currentHealth: 100
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
-  - {fileID: 9178883535886006104, guid: ed12b78e8e48d2144abbee52ce1be7a6, type: 3}
-  - {fileID: 9178883535886006104, guid: ed12b78e8e48d2144abbee52ce1be7a6, type: 3}
+  - {fileID: 9178883535886006104, guid: 39967c4e332271e4d9f13efb84b4afcb, type: 3}
+  - {fileID: 9178883535886006104, guid: 39967c4e332271e4d9f13efb84b4afcb, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: 0097ca5133fb6624f88ebd6ee30275f2, type: 3}
   StunVisual: {fileID: 802473941396510799}
   inkEffect: {fileID: 0}
@@ -1381,7 +1381,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1406734484234363326
+--- !u!114 &2320861752894982252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6175731783906019889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b85cf5ff8b180f41bf82800ad45c6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6736474523131824775

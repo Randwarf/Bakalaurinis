@@ -6,7 +6,7 @@ public class ExplosionController : MonoBehaviour
 {
     public int damage = 20;
     private Collider collider;
-    private Element element = Element.Fire;
+    public Element element = Element.Fire;
 
     // Start is called before the first frame update
     void Start()

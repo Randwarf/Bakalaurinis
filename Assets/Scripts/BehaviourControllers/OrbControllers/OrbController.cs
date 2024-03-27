@@ -1,4 +1,5 @@
 using Assets.Scripts.BehaviourControllers.OrbControllers.OrbStates;
+using Assets.Scripts.BehaviourStates.OrbStates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,20 +34,16 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
 
     private XRGrabInteractable interactable;
 
+    /// <summary>
+    /// Assign states that might be used in the life time of the orb
+    /// ChangeState() is called by an object that instantiates the orb - some orbs might start in UIState, others in RewardState
+    /// </summary>
     public virtual void Awake()
     {
         AddGrabInteractableListeners();
-        AnimatePopUp();
 
         UIState = new UIState(gameObject, uiObjects);
-        RewardState = new RewardState(gameObject);
-    }
-
-    private void AnimatePopUp()
-    {
-        var originalScale = transform.localScale;
-        gameObject.transform.localScale = Vector3.zero;
-        gameObject.transform.LeanScale(originalScale, 1).setEaseOutSine();
+        RewardState = new PedestalOrbState(gameObject);
     }
 
     private void AddGrabInteractableListeners()
@@ -78,23 +75,5 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
     {
         isGrabbed = false;
         behaviourState.OnRelease(args);
-    }
-
-    public void PlayHitAudio()
-    {
-        var hasAudio = TryGetComponent(out AudioSource audio);
-        if (hasAudio)
-        {
-            AudioSource.PlayClipAtPoint(audio.clip, transform.position);
-        }
-    }
-
-    public override void DestroyAll()
-    {
-        base.DestroyAll();
-        UIState = null;
-        ActionState = null;
-        RewardState = null;
-        Destroy(gameObject);
     }
 }

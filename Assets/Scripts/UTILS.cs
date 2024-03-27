@@ -30,4 +30,17 @@ public static class UTILS
     {
         return Enumerable.Range(startInclusive, endInclusive - startInclusive).Shuffle();
     }
+
+    public static void DestroyAllChildren(this GameObject gameObject)
+    {
+        DestroyAllChildren(gameObject.transform);
+    }
+
+    public static void DestroyAllChildren(this Transform transform)
+    {
+        foreach(Transform child in transform)
+        {
+            UnityEngine.Object.Destroy(child.gameObject);
+        }
+    }
 }

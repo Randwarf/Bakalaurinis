@@ -10,13 +10,12 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
 {
     public class FireOrbController : OrbController, IReplaceableOrb
     {
-        public GameObject ReplacementPrefab;
+        public ExplosionController explosionPrefab;
 
         public override void Awake()
         {
             base.Awake();
             ActionState = new ExplodingOrbState(gameObject, actionObjects);
-            ChangeState(UIState);
 
             damage = 20;
             element = Element.Fire;
@@ -24,7 +23,10 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
 
         public void Replace()
         {
-            Instantiate(ReplacementPrefab, this.transform.position, Quaternion.identity);
+            var explosion = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
+            explosion.damage = damage;
+            explosion.element = element;
+
             Destroy(gameObject);
         }
     }

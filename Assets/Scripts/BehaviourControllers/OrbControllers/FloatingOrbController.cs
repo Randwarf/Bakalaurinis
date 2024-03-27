@@ -11,5 +11,6 @@ public class FloatingOrbController : OrbController
         ActionState = new FloatingOrbState(gameObject, actionObjects);
 
         damage = 40;
+        element = Element.Normal;
     }
 }

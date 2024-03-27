@@ -13,7 +13,6 @@ namespace Assets.Scripts.BehaviourControllers.OrbControllers
         {
             base.Awake();
             ActionState = new DirectHitState(gameObject, actionObjects);
-            ChangeState(UIState);
         }
     }
 }

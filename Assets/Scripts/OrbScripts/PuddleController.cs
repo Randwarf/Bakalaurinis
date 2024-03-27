@@ -7,6 +7,7 @@ public class PuddleController : MonoBehaviour
     public int damage = 5;
     public float cooldown = 0.5f;
     public int durability = 5; //How many times the puddle can damage an enemy before dissipating
+    public Element element;
 
     private Collider _collider;
     private float lastAttackTime=-9999;
@@ -14,8 +15,7 @@ public class PuddleController : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-        _collider = GetComponent<Collider>();
+        _collider = GetComponentInChildren<Collider>();
     }
 
     // Update is called once per frame
@@ -44,6 +44,6 @@ public class PuddleController : MonoBehaviour
     {
         lastAttackTime = Time.time;
         durability--;
-        hitableObject.Hit(damage, Element.Fire, false);
+        hitableObject.Hit(damage, element, false);
     }
 }

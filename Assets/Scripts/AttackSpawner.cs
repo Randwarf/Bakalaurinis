@@ -6,6 +6,7 @@ using UnityEngine;
 public class AttackSpawner : MonoBehaviour
 {
     public static List<GameObject> attackPrefabsGlobal;
+    public static List<GameObject> attackPrefabsInDeck;
     public Transform[] SpawnLocations;
     public List<GameObject> attackPrefabs;
 
@@ -18,15 +19,17 @@ public class AttackSpawner : MonoBehaviour
         if (attackPrefabsGlobal == null)
         {
             attackPrefabsGlobal = new List<GameObject>();
+            attackPrefabsInDeck= new List<GameObject>();
             foreach(var attack in attackPrefabs)
             {
                 attackPrefabsGlobal.Add(attack);
+                attackPrefabsInDeck.Add(attack);
             }
         }
         else
         {
             attackPrefabs.Clear();
-            foreach(var attack in attackPrefabsGlobal)
+            foreach(var attack in attackPrefabsInDeck)
             {
                 attackPrefabs.Add(attack);
             }
@@ -36,12 +39,6 @@ public class AttackSpawner : MonoBehaviour
         {
             Spawn(spawnLocation);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Spawn(Transform parent)
@@ -66,6 +63,7 @@ public class AttackSpawner : MonoBehaviour
     {
         attackPrefabs.Add(gameObject);
         attackPrefabsGlobal.Add(gameObject);
+        attackPrefabsInDeck.Add(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

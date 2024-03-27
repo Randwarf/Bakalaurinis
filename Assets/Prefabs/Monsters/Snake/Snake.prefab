@@ -347,11 +347,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3317430389838446505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fcdf0107aa43ac4d8c10277c34fed4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageMultiplier: 1
-  Controller: {fileID: 0}
+  Controller: {fileID: 1051902358374090988}
 --- !u!1 &3597520896480965596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,11 +1186,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7780869136315034350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fcdf0107aa43ac4d8c10277c34fed4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageMultiplier: 0.8
-  Controller: {fileID: 0}
+  DamageMultiplier: 0.75
+  Controller: {fileID: 1051902358374090988}
 --- !u!1 &8027681700293034052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,11 +1254,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8027681700293034052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68005ed27ce5934a8879d593586e218, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fcdf0107aa43ac4d8c10277c34fed4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageMultiplier: 1.25
-  Controller: {fileID: 0}
+  Controller: {fileID: 1051902358374090988}
 --- !u!1 &8215652704947636935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,8 +1477,8 @@ MonoBehaviour:
   currentHealth: 100
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
+  - {fileID: 9178883535886006104, guid: ed12b78e8e48d2144abbee52ce1be7a6, type: 3}
+  - {fileID: 9178883535886006104, guid: ed12b78e8e48d2144abbee52ce1be7a6, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: 5101701b533d24c4193becbd6605b24f, type: 3}
   StunVisual: {fileID: 982518677392903684}
   NormalState: {fileID: 6482321179206526331}
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8473242435245254454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b85cf5ff8b180f41bf82800ad45c6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9045965330407979295

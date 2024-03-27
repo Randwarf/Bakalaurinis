@@ -41,9 +41,4 @@ public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where
         behaviourState = newState;
         behaviourState.Start();
     }
-
-    public virtual void DestroyAll()
-    {
-        behaviourState = null;
-    }
 }

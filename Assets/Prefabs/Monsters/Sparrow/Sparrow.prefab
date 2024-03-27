@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Relays: []
   sparrowController: {fileID: 4679712780800188585}
-  DoppelgangerPrefab: {fileID: 5471664556606351519, guid: d1ef6b2c75357b34b9b9608b4d8a9971, type: 3}
+  DoppelgangerPrefab: {fileID: 8947605180640445088, guid: d1ef6b2c75357b34b9b9608b4d8a9971, type: 3}
   Materials:
   - {fileID: 2100000, guid: 71824330e53acb448a9f9c1f4cfc7aee, type: 2}
   - {fileID: 2100000, guid: f65b2b5a402c648438fcffd294eb2dbe, type: 2}
@@ -253,8 +253,8 @@ MonoBehaviour:
   currentHealth: 100
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
-  - {fileID: 9178883535886006104, guid: 13cd21963abd4d044820eb16b5bd0ab9, type: 3}
+  - {fileID: 9178883535886006104, guid: 381fcfcefa06b5e40a5618a8fb6dc951, type: 3}
+  - {fileID: 9178883535886006104, guid: 381fcfcefa06b5e40a5618a8fb6dc951, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: cfffafa4bd1c3614d899c2529d625793, type: 3}
   StunVisual: {fileID: 8254205435872085693}
   isImmune: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3361360832244926645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a73483fcc7afe349a2a69e1b0274d69, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b85cf5ff8b180f41bf82800ad45c6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &7136001450648300303
