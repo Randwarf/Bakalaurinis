@@ -25,6 +25,12 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
             _timeSinceLastJump = 0;
         }
 
+        public override void Start()
+        {
+            base.Start();
+            UTILS.LookAtCamera(context);
+        }
+
         public override void Update()
         {
             _timeSinceLastJump += Time.deltaTime;

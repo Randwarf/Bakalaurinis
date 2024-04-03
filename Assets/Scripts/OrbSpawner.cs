@@ -62,12 +62,13 @@ public class OrbSpawner : MonoBehaviour
 
         spawnAudio.Play();
         var orb = Instantiate(orbs[orbIndex], transform.position, Quaternion.identity);
-        orb.GetComponent<Rigidbody>().AddForce(Random.insideUnitSphere * 0.001f);
 
         spawnedOrbs.Add(orb);
         var orbController = orb.GetComponent<OrbController>();
         orbController.rewardPrefab = orbs[orbIndex];
         orbController.ChangeState(new EquipableOrbState(orb));
+        orb.GetComponent<Rigidbody>().AddForce(Random.insideUnitSphere * 1f);
+
         orbIndex++;
         spawnTimer = 0f;
     }

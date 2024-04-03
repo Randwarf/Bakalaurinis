@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 4234360325699949619}
   - component: {fileID: 6760927054718377040}
   - component: {fileID: 371167000878939341}
-  - component: {fileID: 2320861752894982252}
+  - component: {fileID: 5742562895066273646}
   m_Layer: 0
   m_Name: Squid
   m_TagString: OrbTarget
@@ -1381,7 +1381,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2320861752894982252
+--- !u!114 &5742562895066273646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
