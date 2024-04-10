@@ -17,6 +17,7 @@ namespace Assets.Scripts.BehaviourStates.OrbStates
             base.Start();
             
             context.GetComponent<Rigidbody>().isKinematic = false;
+            context.GetComponent<Rigidbody>().AddForce(UnityEngine.Random.insideUnitSphere);
         }
 
         public override void AddAttack()

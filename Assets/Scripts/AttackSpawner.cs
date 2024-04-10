@@ -13,6 +13,8 @@ public class AttackSpawner : MonoBehaviour
     [SerializeField]
     public GameObject RewardAura;
 
+    private UIOrbFactory factory = new UIOrbFactory();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,19 +46,7 @@ public class AttackSpawner : MonoBehaviour
     public void Spawn(Transform parent)
     {
         var attackIndex = Random.Range(0, attackPrefabs.Count);
-        var attack = Instantiate(attackPrefabs[attackIndex], parent.position, parent.rotation);
-        var isOldVersion = attack.TryGetComponent<UiOrb>(out UiOrb uiOrb);
-        if (isOldVersion)
-        {
-            uiOrb.parent = parent;
-        }
-        else
-        {
-            var orb = attack.GetComponent<OrbController>();
-            orb.UISlot = parent;
-            orb.ChangeState(orb.UIState);
-        }
-        attack.transform.SetParent(parent);
+        factory.InstantiateOrb(attackPrefabs[attackIndex], parent);
     }
 
     internal void AddNewAttack(GameObject gameObject)

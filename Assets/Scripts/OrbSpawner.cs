@@ -16,6 +16,8 @@ public class OrbSpawner : MonoBehaviour
     private int orbIndex = 0;
     private bool isSpawning = false;
 
+    private LoadoutOrbFactory factory = new LoadoutOrbFactory();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,30 +47,29 @@ public class OrbSpawner : MonoBehaviour
     void Update()
     {
         //Not activated
-        if (!isSpawning) 
+        if (!isSpawning)
             return;
 
         //On Cooldown
         spawnTimer += Time.deltaTime;
-        if (spawnTimer < SPAWN_COOLDOWN) 
+        if (spawnTimer < SPAWN_COOLDOWN)
             return;
 
         //Spawned everything
-        if (orbIndex >= orbs.Count) 
+        if (orbIndex >= orbs.Count)
         {
-            isSpawning = false; 
-            return; 
+            isSpawning = false;
+            return;
         }
 
+        SpawnOrb();
+    }
+
+    private void SpawnOrb()
+    {
         spawnAudio.Play();
-        var orb = Instantiate(orbs[orbIndex], transform.position, Quaternion.identity);
-
+        var orb = factory.InstantiateOrb(orbs[orbIndex], transform.position, Quaternion.identity);
         spawnedOrbs.Add(orb);
-        var orbController = orb.GetComponent<OrbController>();
-        orbController.rewardPrefab = orbs[orbIndex];
-        orbController.ChangeState(new EquipableOrbState(orb));
-        orb.GetComponent<Rigidbody>().AddForce(Random.insideUnitSphere * 1f);
-
         orbIndex++;
         spawnTimer = 0f;
     }

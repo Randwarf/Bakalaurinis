@@ -37,6 +37,9 @@ public class Timer : MonoBehaviour
         if (spriteColorTween == null || maskTween == null) return;
         spriteColorTween.pause();
         maskTween.pause();
+        var statManager = FindAnyObjectByType<StatManager>();
+        statManager.UpdateMatchTime(maskTween.passed);
+
     }
 
     public void SetSpriteColor(Color color)

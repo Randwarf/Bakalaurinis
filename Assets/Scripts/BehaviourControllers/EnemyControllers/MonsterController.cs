@@ -49,6 +49,7 @@ public abstract class MonsterController : BehaviourController<MonsterBehaviourSt
         SpawnReward();
         Instantiate(Throphy, GameObject.Find("ThrophySpawner").transform.position, UnityEngine.Random.rotation);
         FindAnyObjectByType<Timer>().TurnOff();
+        FindAnyObjectByType<StatManager>().UpdateWinStreak(Level.GetInstance().numberOfLoops + 1);
     }
 
     private void SpawnReward()
