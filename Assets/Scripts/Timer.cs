@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-
+    float timeSinceStart = 0f;
     SpriteMask mask;
     SpriteRenderer renderer;
 
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timeSinceStart += Time.deltaTime;
     }
 
     public void TurnOn(float time)
@@ -34,11 +34,13 @@ public class Timer : MonoBehaviour
 
     public void TurnOff()
     {
+        var statManager = FindAnyObjectByType<StatManager>();
+        statManager.UpdateMatchTime(timeSinceStart);
+
         if (spriteColorTween == null || maskTween == null) return;
+
         spriteColorTween.pause();
         maskTween.pause();
-        var statManager = FindAnyObjectByType<StatManager>();
-        statManager.UpdateMatchTime(maskTween.passed);
 
     }
 
