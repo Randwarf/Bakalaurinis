@@ -9,27 +9,42 @@ public abstract class BehaviourController<TBehaviourState> : MonoBehaviour where
     // Update is called once per frame
     void Update()
     {
-        behaviourState.Update();
+        if (behaviourState != null)
+        {
+            behaviourState.Update();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        behaviourState.OnCollisionEnter(collision);
+        if (behaviourState != null) 
+        {
+            behaviourState.OnCollisionEnter(collision);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        behaviourState.OnCollisionExit(collision);
+        if (behaviourState != null)
+        {
+            behaviourState.OnCollisionExit(collision);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        behaviourState.OnTriggerEnter(other);
+        if (behaviourState != null)
+        {
+            behaviourState.OnTriggerEnter(other);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        behaviourState.OnTriggerExit(other);
+        if (behaviourState != null)
+        {
+            behaviourState.OnTriggerExit(other);
+        }
     }
 
     public void ChangeState(TBehaviourState newState)

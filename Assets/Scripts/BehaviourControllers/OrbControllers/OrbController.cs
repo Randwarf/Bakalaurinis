@@ -57,23 +57,35 @@ public abstract class OrbController : BehaviourController<OrbBehaviourState>
 
     public void OnHoverEnter(HoverEnterEventArgs args)
     {
-        behaviourState.OnHoverEnter(args);
+        if (behaviourState != null)
+        {
+            behaviourState.OnHoverEnter(args);
+        }
     }
 
     public void OnHoverExit(HoverExitEventArgs args)
     {
-        behaviourState.OnHoverExit(args);
+        if (behaviourState != null)
+        {
+            behaviourState.OnHoverExit(args);
+        }
     }
 
     public void OnSelectEnter(SelectEnterEventArgs args)
     {
         isGrabbed = true;
-        behaviourState.OnGrab(args);
+        if (behaviourState != null)
+        {
+            behaviourState.OnGrab(args);
+        }
     }
 
     public void OnSelectExit(SelectExitEventArgs args)
     {
         isGrabbed = false;
-        behaviourState.OnRelease(args);
+        if (behaviourState != null)
+        {
+            behaviourState.OnRelease(args);
+        }
     }
 }

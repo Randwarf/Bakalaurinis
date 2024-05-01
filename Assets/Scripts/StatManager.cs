@@ -41,8 +41,8 @@ public class StatManager : MonoBehaviour
 
     private void VisualizeStats()
     {
-        LastMatch.text = stats.RecentMatchTime.ToString("0.00");
-        BestMatch.text = stats.BestMatchTime.ToString("0.00");
+        LastMatch.text = stats.RecentMatchTime.ToString("0.00")+"s";
+        BestMatch.text = stats.BestMatchTime.ToString("0.00")+"s";
         HighScore.text = stats.MaxConsecutiveWins.ToString();
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,7 @@ public class HealthUIController : MonoBehaviour
 
     public void UpdateHealth(int currerntHealth, int maxHealth)
     {
+        currerntHealth = Math.Max(currerntHealth, 0);
         _text.text = currerntHealth.ToString() + "/" + maxHealth.ToString();
     }
 }

@@ -73,4 +73,10 @@ public class OrbSpawner : MonoBehaviour
         orbIndex++;
         spawnTimer = 0f;
     }
+
+    public void MoveOrb(GameObject gameObject)
+    {
+        spawnAudio.Play();
+        gameObject.transform.position = transform.position;
+    }
 }
