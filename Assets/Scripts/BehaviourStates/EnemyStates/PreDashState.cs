@@ -11,7 +11,7 @@ public class PreDashState : MonsterBehaviourState
     public float DASH_COOLDOWN = 3f;
     public float PERLIN_SCALE = 5f;
     public float PERLIN_MULTIPLIER = 10f;
-    public float TURN_AROUND_RADIUS = 10f;
+    public float TURN_AROUND_RADIUS = 9f;
 
     private Rigidbody rb;
     private IDashingMonster dashing;

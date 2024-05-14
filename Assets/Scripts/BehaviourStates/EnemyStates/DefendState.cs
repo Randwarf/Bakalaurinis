@@ -7,6 +7,7 @@ using UnityEngine;
 public class DefendState : MonsterBehaviourState
 {
     IDefensiveMonster controller;
+    bool enableShields = false;
 
     public DefendState (GameObject context)
     {
@@ -17,11 +18,21 @@ public class DefendState : MonsterBehaviourState
     {
         UTILS.LookAtCamera(context);
         controller = context.GetComponent<IDefensiveMonster>();
-        controller.EnableShields();
+        enableShields = true;
     }
 
     public override void End()
     {
         controller.DisableShields();
+    }
+
+    public override void Update()
+    {
+        //Delay shield enable by one frame
+        if (enableShields)
+        {
+            controller.EnableShields();
+            enableShields = false;
+        }
     }
 }

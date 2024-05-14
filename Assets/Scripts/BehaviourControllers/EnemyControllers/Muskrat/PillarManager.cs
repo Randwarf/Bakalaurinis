@@ -49,7 +49,6 @@ public class PillarManager : RelayManager
         {
             LeanTween.cancel(currentAnimation.id);
         }
-        Debug.Log("Moving up to " + (startingY.position.y + 1));
         gameObject.transform.LeanMoveLocalY(startingY.position.y + 1, 2f);
         Relays.ForEach(p => ((HitablePillar)p).particles.Play());
     }

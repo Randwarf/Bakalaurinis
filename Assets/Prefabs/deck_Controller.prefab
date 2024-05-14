@@ -840,7 +840,6 @@ MonoBehaviour:
   attackPrefabs:
   - {fileID: 9178883535886006104, guid: a177d6632f805c0409e13115bda1e33b, type: 3}
   - {fileID: 9178883535886006104, guid: 88d417fa3a5104a4ab9f4ea66f1004cf, type: 3}
-  - {fileID: 9178883535886006104, guid: 39967c4e332271e4d9f13efb84b4afcb, type: 3}
   RewardAura: {fileID: 6365746461175600478}
 --- !u!136 &5946747063915921259
 CapsuleCollider:
