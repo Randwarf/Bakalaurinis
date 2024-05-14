@@ -24,6 +24,7 @@ public class ExitScript : MonoBehaviour
         if (QuitToStart)
         {
             Level.GetInstance().TeleportToSpawn();
+            return;
         }
         else
         {

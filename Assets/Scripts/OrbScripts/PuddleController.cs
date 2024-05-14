@@ -35,7 +35,7 @@ public class PuddleController : MonoBehaviour
         if (!CanCauseDamage()) return;
 
         var isHitable = other.gameObject.TryGetComponent(out IHitableObject hitableObject);
-        if (isHitable)
+        if (isHitable && hitableObject is not HitableObstacle)
             Hit(hitableObject);
 
         if (durability <= 0) Destroy(gameObject);
@@ -43,7 +43,6 @@ public class PuddleController : MonoBehaviour
 
     private void Hit(IHitableObject hitableObject)
     {
-        Debug.Log("Hitting the enemy");
         lastAttackTime = Time.time;
         durability--;
         hitableObject.Hit(damage, element, false);

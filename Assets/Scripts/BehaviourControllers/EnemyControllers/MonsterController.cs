@@ -18,7 +18,7 @@ public abstract class MonsterController : BehaviourController<MonsterBehaviourSt
     protected List<GameObject> Rewards = new List<GameObject>();
 
     [SerializeField]
-    protected GameObject Throphy;
+    public GameObject Throphy;
 
     public GameObject StunVisual;
 

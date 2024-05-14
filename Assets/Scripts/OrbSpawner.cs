@@ -10,6 +10,7 @@ public class OrbSpawner : MonoBehaviour
     AudioSource spawnAudio;
     List<GameObject> orbs;
     List<GameObject> spawnedOrbs;
+    public GameObject Teleporter;
 
     private float SPAWN_COOLDOWN = 0.5f;
     private float spawnTimer = 0f;
@@ -28,6 +29,11 @@ public class OrbSpawner : MonoBehaviour
 
     public void ResetDeck()
     {
+        foreach (var orb in spawnedOrbs) 
+        {
+            Destroy(orb);
+        }
+
         if(attackSpawner == null)
             attackSpawner = FindAnyObjectByType<AttackSpawner>();
 
@@ -41,6 +47,8 @@ public class OrbSpawner : MonoBehaviour
         isSpawning = true;
         orbIndex = 0;
         spawnTimer = 0f;
+        AttackSpawner.Teleporter = Teleporter;
+        Teleporter.SetActive(false);
     }
 
     // Update is called once per frame

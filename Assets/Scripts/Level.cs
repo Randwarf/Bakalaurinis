@@ -26,7 +26,7 @@ public class Level
         SessionID = Guid.NewGuid();
     }
 
-    internal void LoadNext()
+    public void LoadNext()
     {
         numberOfLoops++;
         SceneManager.LoadScene("BattleScene");
@@ -39,7 +39,7 @@ public class Level
         return 180 / numberOfLoops;
     }
 
-    internal void TeleportToSpawn()
+    public void TeleportToSpawn()
     {
         numberOfLoops = 0;
         SessionID = Guid.NewGuid();

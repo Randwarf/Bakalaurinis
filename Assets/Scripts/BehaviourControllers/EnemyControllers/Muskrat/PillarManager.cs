@@ -10,12 +10,14 @@ public class PillarManager : RelayManager
 
     private List<char> Symbols = new List<char>() {'A', 'B', 'C', 'D' };
     private int correctIndex;
-    private float startingY;
+    [SerializeField]
+    public Transform startingY;
+
+    LTDescr currentAnimation;
 
     // Start is called before the first frame update
     void Start()
     {
-        startingY = transform.localPosition.y;
         Symbols = Symbols.Shuffle().ToList();
         correctIndex = Random.Range(0, Symbols.Count - 1);
         muskratController.setSymbol(Symbols[correctIndex]);
@@ -43,13 +45,22 @@ public class PillarManager : RelayManager
     internal void EnablePillars()
     {
         Start();
-        gameObject.transform.LeanMoveLocalY(startingY + 1, 2f);
+        if(currentAnimation!= null) 
+        {
+            LeanTween.cancel(currentAnimation.id);
+        }
+        Debug.Log("Moving up to " + (startingY.position.y + 1));
+        gameObject.transform.LeanMoveLocalY(startingY.position.y + 1, 2f);
         Relays.ForEach(p => ((HitablePillar)p).particles.Play());
     }
 
     internal void DisablePillars()
     {
         Relays.ForEach(p => ((HitablePillar)p).particles.Play());
-        gameObject.transform.LeanMoveLocalY(startingY, 2f);
+        if(currentAnimation!= null)
+        {
+            LeanTween.cancel(currentAnimation.id);
+        }
+        currentAnimation = gameObject.transform.LeanMoveLocalY(startingY.position.y, 2f);
     }
 }

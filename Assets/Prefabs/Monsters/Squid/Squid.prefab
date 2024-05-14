@@ -1169,7 +1169,7 @@ Transform:
   m_GameObject: {fileID: 6175731783906019889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.059, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1282,7 +1282,6 @@ MonoBehaviour:
   - {fileID: 9178883535886006104, guid: 39967c4e332271e4d9f13efb84b4afcb, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: 0097ca5133fb6624f88ebd6ee30275f2, type: 3}
   StunVisual: {fileID: 802473941396510799}
-  inkEffect: {fileID: 0}
   timeSinceLastInk: 0
   inkDelay: 10
 --- !u!82 &371167000878939341

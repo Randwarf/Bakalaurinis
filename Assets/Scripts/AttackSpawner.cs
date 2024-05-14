@@ -9,6 +9,7 @@ public class AttackSpawner : MonoBehaviour
     public static List<GameObject> attackPrefabsInDeck;
     public Transform[] SpawnLocations;
     public List<GameObject> attackPrefabs;
+    public static GameObject Teleporter;
 
     [SerializeField]
     public GameObject RewardAura;

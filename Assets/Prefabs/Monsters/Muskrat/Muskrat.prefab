@@ -293,6 +293,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6494183226355661457}
   m_maskType: 0
+--- !u!1 &772423955236364835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024379473059036492}
+  m_Layer: 0
+  m_Name: StartingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1024379473059036492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772423955236364835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 644027910916855787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &820122798214509578
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +942,7 @@ Transform:
   - {fileID: 9158071240832980793}
   - {fileID: 2066640900442109374}
   - {fileID: 6055661955248283120}
+  - {fileID: 1024379473059036492}
   - {fileID: 486561690249008339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -975,7 +1007,7 @@ MonoBehaviour:
   RewardPedestal: {fileID: 9004007686706752456, guid: 1baf7a6b95bdf654db5ce01479635acd, type: 3}
   Rewards:
   - {fileID: 9178883535886006104, guid: 381fcfcefa06b5e40a5618a8fb6dc951, type: 3}
-  - {fileID: 9178883535886006104, guid: 39967c4e332271e4d9f13efb84b4afcb, type: 3}
+  - {fileID: 9178883535886006104, guid: ed12b78e8e48d2144abbee52ce1be7a6, type: 3}
   Throphy: {fileID: 3146417679373322673, guid: e954984da080241438f899b839bcb409, type: 3}
   StunVisual: {fileID: 218143814579693097}
   pillarManager: {fileID: 1879548706487906386}
@@ -1004,10 +1036,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 94
   m_CollisionDetection: 0
 --- !u!114 &6020557245141812143
 MonoBehaviour:
@@ -1158,6 +1190,7 @@ MonoBehaviour:
   - {fileID: 117117173805383173}
   - {fileID: 3075616328735119838}
   muskratController: {fileID: 6833493536286509751}
+  startingY: {fileID: 1024379473059036492}
 --- !u!1 &7172965983032830788
 GameObject:
   m_ObjectHideFlags: 0

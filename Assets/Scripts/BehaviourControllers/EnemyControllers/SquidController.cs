@@ -10,7 +10,6 @@ namespace Assets.Custom_Scripts
 {
     public class SquidController : MonsterController
     {
-        public InkApplier inkEffect;
         public float timeSinceLastInk = 0f;
         public float inkDelay = 10f;
 
@@ -18,7 +17,7 @@ namespace Assets.Custom_Scripts
         {
             ChangeState(new JumpState(gameObject));
             elementalType = Element.Water;
-            inkEffect = GetComponent<InkApplier>();
+            transform.localPosition += new Vector3(0, 1, 0);
         }
     }
 }

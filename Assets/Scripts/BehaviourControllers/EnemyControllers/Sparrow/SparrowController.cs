@@ -26,7 +26,6 @@ public class SparrowController : MonsterController, IDefensiveMonster
     void Start()
     {
         ChangeState(new DefendState(gameObject));
-        //behaviourState.Start();
         elementalType = Element.Fire;
         UTILS.LookAtCamera(gameObject);
     }

@@ -1017,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6592162360964517271, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694496370488184912, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -1128,6 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5748ea7be68ac894796c6b02dea1c1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuitToStart: 0
   ExitButton: {fileID: 846214423313504815, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &511733285
 Transform:
@@ -1500,7 +1505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &626508753
 Transform:
   m_ObjectHideFlags: 0
@@ -2445,7 +2450,6 @@ MonoBehaviour:
   m_StartingGroupMembers:
   - {fileID: 1517303360}
   - {fileID: 1193932579}
-  - {fileID: 0}
   m_StartingInteractionOverridesMap: []
 --- !u!1 &940196755 stripped
 GameObject:

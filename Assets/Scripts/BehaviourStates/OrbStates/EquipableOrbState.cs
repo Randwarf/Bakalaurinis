@@ -24,6 +24,10 @@ namespace Assets.Scripts.BehaviourStates.OrbStates
         {
             var deck = GameObject.FindAnyObjectByType<AttackSpawner>();
             AttackSpawner.attackPrefabsInDeck.Add(orbController.rewardPrefab);
+            if (AttackSpawner.Teleporter != null)
+            {
+                AttackSpawner.Teleporter.SetActive(true);
+            }
         }
     }
 }

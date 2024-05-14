@@ -12,8 +12,8 @@ namespace Assets.Custom_Scripts.EnemyControllers.Strategies
     {
         private MonsterBehaviourState _previousState;
 
-        private float _elapsedTime = 0f;
-        private float _stunTime;
+        public float _elapsedTime = 0f;
+        public float _stunTime;
 
         public StunState(GameObject controller, MonsterBehaviourState previousState, float stunTime = 2f) 
         {

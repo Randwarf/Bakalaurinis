@@ -24,9 +24,9 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        this.other = other;
-        if (this.other is CharacterController)
+        if (other is CharacterController)
         {
+            this.other = other;
             if (!goToNextLevel)
             {
                 location = GameObject.Find("TeleportSpot");
